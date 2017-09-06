@@ -21,16 +21,20 @@
     attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
     
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSFontAttributeName] = [UIFont systemFontOfSize:14];
-    selectedAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
+    selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
+     UITabBarItem *tabBarItem = [UITabBarItem appearance];
+    [tabBarItem setTitleTextAttributes:attrs forState:UIControlStateNormal];
+    [tabBarItem setTitleTextAttributes:attrs forState:UIControlStateSelected];
+    
     UIViewController *vc01 = [[UIViewController alloc]init];
     vc01.title = @"精华";
     vc01.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
     vc01.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_essence_click_icon"];
     
+    
     vc01.view.backgroundColor = [UIColor redColor];
-    [vc01.tabBarItem setTitleTextAttributes:attrs forState:UIControlStateNormal];
-    [vc01.tabBarItem setTitleTextAttributes:attrs forState:UIControlStateSelected];
+   
     [self addChildViewController:vc01];
     
     UIViewController *vc02 = [[UIViewController alloc]init];
