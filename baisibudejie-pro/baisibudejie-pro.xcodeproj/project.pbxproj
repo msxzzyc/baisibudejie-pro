@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		124B3BA21F601C57000ADC3F /* ZYCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */; };
 		12CCF8141F5EF0BF0019E988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8131F5EF0BF0019E988 /* main.m */; };
 		12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8161F5EF0BF0019E988 /* AppDelegate.m */; };
 		12CCF81A1F5EF0BF0019E988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8191F5EF0BF0019E988 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		124B3BA01F601C57000ADC3F /* ZYCTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTabBarController.h; sourceTree = "<group>"; };
+		124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTabBarController.m; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF8131F5EF0BF0019E988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12CCF8151F5EF0BF0019E988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 			children = (
 				12CCF8151F5EF0BF0019E988 /* AppDelegate.h */,
 				12CCF8161F5EF0BF0019E988 /* AppDelegate.m */,
+				124B3BA01F601C57000ADC3F /* ZYCTabBarController.h */,
+				124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */,
 				12CCF8181F5EF0BF0019E988 /* ViewController.h */,
 				12CCF8191F5EF0BF0019E988 /* ViewController.m */,
 				12CCF8261F5EF0C00019E988 /* Info.plist */,
@@ -152,6 +157,7 @@
 		12CCF8071F5EF0BE0019E988 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZYC;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = wpzyc;
 				TargetAttributes = {
@@ -212,6 +218,7 @@
 				12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */,
 				12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */,
 				12CCF8141F5EF0BF0019E988 /* main.m in Sources */,
+				124B3BA21F601C57000ADC3F /* ZYCTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +396,7 @@
 				12CCF8361F5EF0C70019E988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		12CCF8371F5EF0C70019E988 /* Build configuration list for PBXNativeTarget "baisibudejie-proUITests" */ = {
 			isa = XCConfigurationList;
@@ -397,6 +405,7 @@
 				12CCF8391F5EF0C70019E988 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

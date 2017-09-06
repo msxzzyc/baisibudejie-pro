@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ZYCTabBarController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,8 +20,7 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    
-    self.window.rootViewController = [[ViewController alloc]init];
+    self.window.rootViewController = [[ZYCTabBarController alloc]init];
     [self.window makeKeyAndVisible];
     return YES;
 }
