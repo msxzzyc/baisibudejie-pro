@@ -12,6 +12,7 @@
 #import "ZYCFriendTrendsViewController.h"
 #import "ZYCMeViewController.h"
 
+#import "ZYCTabBar.h"
 @interface ZYCTabBarController ()
 
 @end
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setValue:[[ZYCTabBar alloc]init] forKeyPath:@"tabBar"];
+    
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:14];
     attrs[NSForegroundColorAttributeName] = [UIColor grayColor];

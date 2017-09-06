@@ -16,6 +16,7 @@
 		124B3BB61F603160000ADC3F /* ZYCMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BB41F603160000ADC3F /* ZYCMeViewController.xib */; };
 		124B3BBA1F6031AC000ADC3F /* ZYCFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */; };
 		124B3BBB1F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */; };
+		124B3BBE1F603C99000ADC3F /* ZYCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BBD1F603C99000ADC3F /* ZYCTabBar.m */; };
 		12CCF8141F5EF0BF0019E988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8131F5EF0BF0019E988 /* main.m */; };
 		12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8161F5EF0BF0019E988 /* AppDelegate.m */; };
 		12CCF81A1F5EF0BF0019E988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8191F5EF0BF0019E988 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 		124B3BB71F6031AC000ADC3F /* ZYCFriendTrendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCFriendTrendsViewController.h; sourceTree = "<group>"; };
 		124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCFriendTrendsViewController.m; sourceTree = "<group>"; };
 		124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCFriendTrendsViewController.xib; sourceTree = "<group>"; };
+		124B3BBC1F603C98000ADC3F /* ZYCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTabBar.h; sourceTree = "<group>"; };
+		124B3BBD1F603C99000ADC3F /* ZYCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTabBar.m; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF8131F5EF0BF0019E988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12CCF8151F5EF0BF0019E988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +112,8 @@
 				12CCF8161F5EF0BF0019E988 /* AppDelegate.m */,
 				124B3BA01F601C57000ADC3F /* ZYCTabBarController.h */,
 				124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */,
+				124B3BBC1F603C98000ADC3F /* ZYCTabBar.h */,
+				124B3BBD1F603C99000ADC3F /* ZYCTabBar.m */,
 				124B3BA31F6030BD000ADC3F /* ZYCEssenceViewController.h */,
 				124B3BA41F6030BD000ADC3F /* ZYCEssenceViewController.m */,
 				124B3BA51F6030BD000ADC3F /* ZYCEssenceViewController.xib */,
@@ -254,6 +259,7 @@
 				124B3BBA1F6031AC000ADC3F /* ZYCFriendTrendsViewController.m in Sources */,
 				12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */,
 				12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */,
+				124B3BBE1F603C99000ADC3F /* ZYCTabBar.m in Sources */,
 				12CCF8141F5EF0BF0019E988 /* main.m in Sources */,
 				124B3BAB1F60311A000ADC3F /* ZYCNewViewController.m in Sources */,
 				124B3BA61F6030BD000ADC3F /* ZYCEssenceViewController.m in Sources */,
