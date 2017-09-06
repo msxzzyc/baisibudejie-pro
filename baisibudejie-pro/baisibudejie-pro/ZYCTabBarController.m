@@ -5,9 +5,13 @@
 //  Created by wpzyc on 2017/9/6.
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
-
-#import "ZYCTabBarController.h"
 #import <Foundation/Foundation.h>
+#import "ZYCTabBarController.h"
+#import "ZYCEssenceViewController.h"
+#import "ZYCNewViewController.h"
+#import "ZYCFriendTrendsViewController.h"
+#import "ZYCMeViewController.h"
+
 @interface ZYCTabBarController ()
 
 @end
@@ -25,46 +29,26 @@
     selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
      UITabBarItem *tabBarItem = [UITabBarItem appearance];
     [tabBarItem setTitleTextAttributes:attrs forState:UIControlStateNormal];
-    [tabBarItem setTitleTextAttributes:attrs forState:UIControlStateSelected];
-    
-    UIViewController *vc01 = [[UIViewController alloc]init];
-    vc01.title = @"精华";
-    vc01.tabBarItem.image = [UIImage imageNamed:@"tabBar_essence_icon"];
-    vc01.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_essence_click_icon"];
-    
-    
-    vc01.view.backgroundColor = [UIColor redColor];
+    [tabBarItem setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
    
-    [self addChildViewController:vc01];
+    [self setUpChildViewController:[[ZYCEssenceViewController alloc]init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
-    UIViewController *vc02 = [[UIViewController alloc]init];
-    vc02.view.backgroundColor = [UIColor greenColor];
-    vc02.title = @"新帖";
-    vc02.tabBarItem.image =[UIImage imageNamed:@"tabBar_new_icon"];
-    vc02.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_new_click_icon"];
+    [self setUpChildViewController:[[ZYCNewViewController alloc]init] title:@"新帖" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];
     
-    [self addChildViewController:vc02];
+    [self setUpChildViewController:[[ZYCFriendTrendsViewController alloc]init] title:@"关注" image:@"tabBar_friendTrends_icon" selectedImage:@"tabBar_friendTrends_click_icon"];
     
-    UIViewController *vc03 = [[UIViewController alloc]init];
-    vc03.view.backgroundColor = [UIColor grayColor];
-    vc03.title = @"关注";
-    vc03.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
-    vc03.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
-    
-    [self addChildViewController:vc03];
-    
-    UIViewController *vc04 = [[UIViewController alloc]init];
-    vc04.view.backgroundColor = [UIColor blueColor];
-    vc04.view.backgroundColor = [UIColor grayColor];
-    vc04.title = @"我";
-    vc04.tabBarItem.image = [UIImage imageNamed:@"tabBar_me_icon"];
-    vc04.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_me_click_icon"];
-    
-    
-    
-    [self addChildViewController:vc04];
+    [self setUpChildViewController:[[ZYCMeViewController alloc]init] title:@"我" image:@"tabBar_me_icon" selectedImage:@"tabBar_me_click_icon"];
 }
 
+- (void)setUpChildViewController:(UIViewController *)vc title:(NSString *)title image:(NSString *)imageName selectedImage:(NSString *)selectedImageName
+{
+    vc.title = title;
+    vc.tabBarItem.image = [UIImage imageNamed:imageName];
+    vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
+    vc.view.backgroundColor = [UIColor redColor];
+    
+    [self addChildViewController:vc];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		124B3BA21F601C57000ADC3F /* ZYCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */; };
+		124B3BA61F6030BD000ADC3F /* ZYCEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BA41F6030BD000ADC3F /* ZYCEssenceViewController.m */; };
+		124B3BA71F6030BD000ADC3F /* ZYCEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BA51F6030BD000ADC3F /* ZYCEssenceViewController.xib */; };
+		124B3BAB1F60311A000ADC3F /* ZYCNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BA91F60311A000ADC3F /* ZYCNewViewController.m */; };
+		124B3BAC1F60311A000ADC3F /* ZYCNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BAA1F60311A000ADC3F /* ZYCNewViewController.xib */; };
+		124B3BB51F603160000ADC3F /* ZYCMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BB31F603160000ADC3F /* ZYCMeViewController.m */; };
+		124B3BB61F603160000ADC3F /* ZYCMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BB41F603160000ADC3F /* ZYCMeViewController.xib */; };
+		124B3BBA1F6031AC000ADC3F /* ZYCFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */; };
+		124B3BBB1F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */; };
 		12CCF8141F5EF0BF0019E988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8131F5EF0BF0019E988 /* main.m */; };
 		12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8161F5EF0BF0019E988 /* AppDelegate.m */; };
 		12CCF81A1F5EF0BF0019E988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8191F5EF0BF0019E988 /* ViewController.m */; };
@@ -29,6 +37,18 @@
 /* Begin PBXFileReference section */
 		124B3BA01F601C57000ADC3F /* ZYCTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTabBarController.h; sourceTree = "<group>"; };
 		124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTabBarController.m; sourceTree = "<group>"; };
+		124B3BA31F6030BD000ADC3F /* ZYCEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCEssenceViewController.h; sourceTree = "<group>"; };
+		124B3BA41F6030BD000ADC3F /* ZYCEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCEssenceViewController.m; sourceTree = "<group>"; };
+		124B3BA51F6030BD000ADC3F /* ZYCEssenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCEssenceViewController.xib; sourceTree = "<group>"; };
+		124B3BA81F60311A000ADC3F /* ZYCNewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCNewViewController.h; sourceTree = "<group>"; };
+		124B3BA91F60311A000ADC3F /* ZYCNewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCNewViewController.m; sourceTree = "<group>"; };
+		124B3BAA1F60311A000ADC3F /* ZYCNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCNewViewController.xib; sourceTree = "<group>"; };
+		124B3BB21F603160000ADC3F /* ZYCMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCMeViewController.h; sourceTree = "<group>"; };
+		124B3BB31F603160000ADC3F /* ZYCMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCMeViewController.m; sourceTree = "<group>"; };
+		124B3BB41F603160000ADC3F /* ZYCMeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCMeViewController.xib; sourceTree = "<group>"; };
+		124B3BB71F6031AC000ADC3F /* ZYCFriendTrendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCFriendTrendsViewController.h; sourceTree = "<group>"; };
+		124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCFriendTrendsViewController.m; sourceTree = "<group>"; };
+		124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF8131F5EF0BF0019E988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12CCF8151F5EF0BF0019E988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -82,13 +102,25 @@
 		12CCF8111F5EF0BE0019E988 /* baisibudejie-pro */ = {
 			isa = PBXGroup;
 			children = (
+				124B3BB71F6031AC000ADC3F /* ZYCFriendTrendsViewController.h */,
+				124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */,
+				124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */,
 				12CCF8151F5EF0BF0019E988 /* AppDelegate.h */,
 				12CCF8161F5EF0BF0019E988 /* AppDelegate.m */,
 				124B3BA01F601C57000ADC3F /* ZYCTabBarController.h */,
 				124B3BA11F601C57000ADC3F /* ZYCTabBarController.m */,
+				124B3BA31F6030BD000ADC3F /* ZYCEssenceViewController.h */,
+				124B3BA41F6030BD000ADC3F /* ZYCEssenceViewController.m */,
+				124B3BA51F6030BD000ADC3F /* ZYCEssenceViewController.xib */,
+				124B3BB41F603160000ADC3F /* ZYCMeViewController.xib */,
 				12CCF8181F5EF0BF0019E988 /* ViewController.h */,
 				12CCF8191F5EF0BF0019E988 /* ViewController.m */,
 				12CCF8261F5EF0C00019E988 /* Info.plist */,
+				124B3BA91F60311A000ADC3F /* ZYCNewViewController.m */,
+				124B3BA81F60311A000ADC3F /* ZYCNewViewController.h */,
+				124B3BB21F603160000ADC3F /* ZYCMeViewController.h */,
+				124B3BB31F603160000ADC3F /* ZYCMeViewController.m */,
+				124B3BAA1F60311A000ADC3F /* ZYCNewViewController.xib */,
 				12CCF81E1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld */,
 				12CCF8121F5EF0BF0019E988 /* Supporting Files */,
 			);
@@ -196,7 +228,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124B3BBB1F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib in Resources */,
+				124B3BB61F603160000ADC3F /* ZYCMeViewController.xib in Resources */,
+				124B3BA71F6030BD000ADC3F /* ZYCEssenceViewController.xib in Resources */,
 				12CCF8221F5EF0C00019E988 /* Assets.xcassets in Resources */,
+				124B3BAC1F60311A000ADC3F /* ZYCNewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,10 +251,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				12CCF81A1F5EF0BF0019E988 /* ViewController.m in Sources */,
+				124B3BBA1F6031AC000ADC3F /* ZYCFriendTrendsViewController.m in Sources */,
 				12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */,
 				12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */,
 				12CCF8141F5EF0BF0019E988 /* main.m in Sources */,
+				124B3BAB1F60311A000ADC3F /* ZYCNewViewController.m in Sources */,
+				124B3BA61F6030BD000ADC3F /* ZYCEssenceViewController.m in Sources */,
 				124B3BA21F601C57000ADC3F /* ZYCTabBarController.m in Sources */,
+				124B3BB51F603160000ADC3F /* ZYCMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
