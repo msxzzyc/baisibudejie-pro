@@ -10,7 +10,15 @@
 #define PrefixHeader_pch
 
 #import "UIView+ZYCExtention.h"
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+#define ZYCLog(...) NSLog(__VA_ARGS__);
+#define ZYCLogFuc NSLog(@"%s",__func__);
+
+#else
+#define ZYCLog(...)
+#define ZYCLogFuc
+
+#endif
 
 #endif /* PrefixHeader_pch */

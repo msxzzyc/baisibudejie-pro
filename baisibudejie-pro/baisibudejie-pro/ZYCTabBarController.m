@@ -45,12 +45,14 @@
 
 - (void)setUpChildViewController:(UIViewController *)vc title:(NSString *)title image:(NSString *)imageName selectedImage:(NSString *)selectedImageName
 {
-    vc.title = title;
+    vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:imageName];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
     vc.view.backgroundColor = [UIColor redColor];
     
-    [self addChildViewController:vc];
+    UINavigationController *naVc = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+    [self addChildViewController:naVc];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
