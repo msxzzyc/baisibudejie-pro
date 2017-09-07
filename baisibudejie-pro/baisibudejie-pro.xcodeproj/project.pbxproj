@@ -17,6 +17,7 @@
 		124B3BBA1F6031AC000ADC3F /* ZYCFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BB81F6031AC000ADC3F /* ZYCFriendTrendsViewController.m */; };
 		124B3BBB1F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */; };
 		124B3BBE1F603C99000ADC3F /* ZYCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 124B3BBD1F603C99000ADC3F /* ZYCTabBar.m */; };
+		129C61941F617BAE0061AC67 /* UIView+ZYCExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61931F617BAD0061AC67 /* UIView+ZYCExtention.m */; };
 		12CCF8141F5EF0BF0019E988 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8131F5EF0BF0019E988 /* main.m */; };
 		12CCF8171F5EF0BF0019E988 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8161F5EF0BF0019E988 /* AppDelegate.m */; };
 		12CCF81A1F5EF0BF0019E988 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF8191F5EF0BF0019E988 /* ViewController.m */; };
@@ -52,6 +53,9 @@
 		124B3BB91F6031AC000ADC3F /* ZYCFriendTrendsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCFriendTrendsViewController.xib; sourceTree = "<group>"; };
 		124B3BBC1F603C98000ADC3F /* ZYCTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTabBar.h; sourceTree = "<group>"; };
 		124B3BBD1F603C99000ADC3F /* ZYCTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTabBar.m; sourceTree = "<group>"; };
+		129C61921F617BAD0061AC67 /* UIView+ZYCExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ZYCExtention.h"; sourceTree = "<group>"; };
+		129C61931F617BAD0061AC67 /* UIView+ZYCExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZYCExtention.m"; sourceTree = "<group>"; };
+		129C61951F617C880061AC67 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF8131F5EF0BF0019E988 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		12CCF8151F5EF0BF0019E988 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 				124B3BAA1F60311A000ADC3F /* ZYCNewViewController.xib */,
 				12CCF81E1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld */,
 				12CCF8121F5EF0BF0019E988 /* Supporting Files */,
+				129C61921F617BAD0061AC67 /* UIView+ZYCExtention.h */,
+				129C61931F617BAD0061AC67 /* UIView+ZYCExtention.m */,
 			);
 			path = "baisibudejie-pro";
 			sourceTree = "<group>";
@@ -137,6 +143,7 @@
 			children = (
 				12CCF8211F5EF0C00019E988 /* Assets.xcassets */,
 				12CCF8131F5EF0BF0019E988 /* main.m */,
+				129C61951F617C880061AC67 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 				12CCF8141F5EF0BF0019E988 /* main.m in Sources */,
 				124B3BAB1F60311A000ADC3F /* ZYCNewViewController.m in Sources */,
 				124B3BA61F6030BD000ADC3F /* ZYCEssenceViewController.m in Sources */,
+				129C61941F617BAE0061AC67 /* UIView+ZYCExtention.m in Sources */,
 				124B3BA21F601C57000ADC3F /* ZYCTabBarController.m in Sources */,
 				124B3BB51F603160000ADC3F /* ZYCMeViewController.m in Sources */,
 			);
@@ -318,6 +326,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "baisibudejie-pro/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -364,6 +373,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "baisibudejie-pro/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
