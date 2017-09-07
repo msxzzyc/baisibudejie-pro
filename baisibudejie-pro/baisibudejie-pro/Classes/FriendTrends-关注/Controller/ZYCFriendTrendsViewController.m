@@ -1,33 +1,32 @@
 //
-//  ZYCMeViewController.m
+//  ZYCFriendTrendsViewController.m
 //  baisibudejie-pro
 //
 //  Created by wpzyc on 2017/9/6.
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
 
-#import "ZYCMeViewController.h"
+#import "ZYCFriendTrendsViewController.h"
 
-@interface ZYCMeViewController ()
+@interface ZYCFriendTrendsViewController ()
 
 @end
 
-@implementation ZYCMeViewController
+@implementation ZYCFriendTrendsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"我";
+    self.navigationItem.title = @"我的关注";
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:@"friendsRecommentIcon" highImage:@"friendsRecommentIcon-click" target:self action:@selector(buttonClick)];
     
-    UIBarButtonItem *settingItem = [UIBarButtonItem itemWithimage:@"mine-setting-icon" highImage:@"mine-setting-icon-click" target:self action:@selector(settingButtonClick)];
-    
-    UIBarButtonItem *moonItem = [UIBarButtonItem itemWithimage:@"mine-moon-icon" highImage:@"mine-moon-icon-click" target:nil action:nil];
-    self.navigationItem.rightBarButtonItems = @[settingItem,moonItem];
+    self.view.backgroundColor = ZYCGlobalBg;
 }
-- (void)settingButtonClick
+- (void)buttonClick
 {
     ZYCLogFuc;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

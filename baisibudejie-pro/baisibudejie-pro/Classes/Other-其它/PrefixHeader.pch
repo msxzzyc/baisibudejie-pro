@@ -13,13 +13,14 @@
 #import "UIBarButtonItem+ZYCExtention.h"
 
 #ifdef DEBUG
-#define ZYCLog(...) NSLog(__VA_ARGS__);
-#define ZYCLogFuc NSLog(@"%s",__func__);
+#define ZYCLog(...) NSLog(__VA_ARGS__)
+
 
 #else
 #define ZYCLog(...)
-#define ZYCLogFuc
 
 #endif
-
+#define ZYCLogFuc NSLog(@"%s",__func__)
+#define ZYCRGBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define ZYCGlobalBg ZYCRGBColor(233,233,233)
 #endif /* PrefixHeader_pch */

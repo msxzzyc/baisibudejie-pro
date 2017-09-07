@@ -1,30 +1,31 @@
 //
-//  ZYCEssenceViewController.m
+//  ZYCNewViewController.m
 //  baisibudejie-pro
 //
 //  Created by wpzyc on 2017/9/6.
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
 
-#import "ZYCEssenceViewController.h"
+#import "ZYCNewViewController.h"
 
-@interface ZYCEssenceViewController ()
+@interface ZYCNewViewController ()
 
 @end
 
-@implementation ZYCEssenceViewController
+@implementation ZYCNewViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = ZYCGlobalBg;
+    
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(essencebuttonClick)];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(buttonClick)];
     
-
 }
 
-- (void)essencebuttonClick
+- (void)buttonClick
 {
     ZYCLogFuc;
 }

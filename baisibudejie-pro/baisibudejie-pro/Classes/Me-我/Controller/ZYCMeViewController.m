@@ -1,29 +1,32 @@
 //
-//  ZYCNewViewController.m
+//  ZYCMeViewController.m
 //  baisibudejie-pro
 //
 //  Created by wpzyc on 2017/9/6.
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
 
-#import "ZYCNewViewController.h"
+#import "ZYCMeViewController.h"
 
-@interface ZYCNewViewController ()
+@interface ZYCMeViewController ()
 
 @end
 
-@implementation ZYCNewViewController
+@implementation ZYCMeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle"]];
+    self.navigationItem.title = @"我";
     
-    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithimage:@"MainTagSubIcon" highImage:@"MainTagSubIconClick" target:self action:@selector(buttonClick)];
+    self.view.backgroundColor = ZYCGlobalBg;
     
+    UIBarButtonItem *settingItem = [UIBarButtonItem itemWithimage:@"mine-setting-icon" highImage:@"mine-setting-icon-click" target:self action:@selector(settingButtonClick)];
+    
+    UIBarButtonItem *moonItem = [UIBarButtonItem itemWithimage:@"mine-moon-icon" highImage:@"mine-moon-icon-click" target:nil action:nil];
+    self.navigationItem.rightBarButtonItems = @[settingItem,moonItem];
 }
-
-- (void)buttonClick
+- (void)settingButtonClick
 {
     ZYCLogFuc;
 }
