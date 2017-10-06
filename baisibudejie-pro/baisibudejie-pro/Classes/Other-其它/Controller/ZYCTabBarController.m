@@ -20,11 +20,8 @@
 
 @implementation ZYCTabBarController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setValue:[[ZYCTabBar alloc]init] forKeyPath:@"tabBar"];
-    
-    
++ (void)initialize
+{
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSFontAttributeName] = [UIFont systemFontOfSize:14];
     attrs[NSForegroundColorAttributeName] = [UIColor grayColor];
@@ -32,10 +29,18 @@
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
     selectedAttrs[NSFontAttributeName] = attrs[NSFontAttributeName];
     selectedAttrs[NSForegroundColorAttributeName] = [UIColor darkGrayColor];
-     UITabBarItem *tabBarItem = [UITabBarItem appearance];
+    UITabBarItem *tabBarItem = [UITabBarItem appearance];
     [tabBarItem setTitleTextAttributes:attrs forState:UIControlStateNormal];
     [tabBarItem setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
-   
+    
+    
+}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setValue:[[ZYCTabBar alloc]init] forKeyPath:@"tabBar"];
+    
+    
+    
     [self setUpChildViewController:[[ZYCEssenceViewController alloc]init] title:@"精华" image:@"tabBar_essence_icon" selectedImage:@"tabBar_essence_click_icon"];
     
     [self setUpChildViewController:[[ZYCNewViewController alloc]init] title:@"新帖" image:@"tabBar_new_icon" selectedImage:@"tabBar_new_click_icon"];

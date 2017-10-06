@@ -13,12 +13,16 @@
 @end
 
 @implementation ZYCNavigationController
-
++ (void)initialize
+{
+    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
+    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    UINavigationBar *bar = [UINavigationBar appearanceWhenContainedIn:[self class], nil];
-    [bar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)didReceiveMemoryWarning {
