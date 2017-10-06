@@ -21,9 +21,15 @@
 		129C61D31F619F5C0061AC67 /* ZYCTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61C11F619F5C0061AC67 /* ZYCTabBarController.m */; };
 		129C61D41F619F5C0061AC67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61C21F619F5C0061AC67 /* main.m */; };
 		129C61D51F619F5C0061AC67 /* ZYCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61C71F619F5C0061AC67 /* ZYCTabBar.m */; };
+		129CB0381F83DE5F0039016A /* ZYCRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129CB0361F83DE5F0039016A /* ZYCRecommendViewController.m */; };
+		129CB0391F83DE5F0039016A /* ZYCRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129CB0371F83DE5F0039016A /* ZYCRecommendViewController.xib */; };
 		12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF81E1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld */; };
 		12CCF8221F5EF0C00019E988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CCF8211F5EF0C00019E988 /* Assets.xcassets */; };
 		12CCF8301F5EF0C70019E988 /* baisibudejie_proUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF82F1F5EF0C70019E988 /* baisibudejie_proUITests.m */; };
+		12FE4B991F873897001CD643 /* ZYCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FE4B981F873897001CD643 /* ZYCNavigationController.m */; };
+		12FE4B9B1F87397B001CD643 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FE4B9A1F87397B001CD643 /* Foundation+Log.m */; };
+		86AD902B87DA3FA09C77B4F0 /* libPods-baisibudejie-proUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94453FD44617546F5956BE9A /* libPods-baisibudejie-proUITests.a */; };
+		F6024F547A0844366175776E /* libPods-baisibudejie-pro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5DDEC683FC06DD02B05B407 /* libPods-baisibudejie-pro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08A339B69BBAB719148CAC9E /* Pods-baisibudejie-pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-pro.release.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro.release.xcconfig"; sourceTree = "<group>"; };
 		129C619D1F619F5C0061AC67 /* ZYCEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCEssenceViewController.h; sourceTree = "<group>"; };
 		129C619E1F619F5C0061AC67 /* ZYCEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCEssenceViewController.m; sourceTree = "<group>"; };
 		129C619F1F619F5C0061AC67 /* ZYCEssenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCEssenceViewController.xib; sourceTree = "<group>"; };
@@ -61,6 +68,9 @@
 		129C61C41F619F5C0061AC67 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		129C61C61F619F5C0061AC67 /* ZYCTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCTabBar.h; sourceTree = "<group>"; };
 		129C61C71F619F5C0061AC67 /* ZYCTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCTabBar.m; sourceTree = "<group>"; };
+		129CB0351F83DE5F0039016A /* ZYCRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendViewController.h; sourceTree = "<group>"; };
+		129CB0361F83DE5F0039016A /* ZYCRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendViewController.m; sourceTree = "<group>"; };
+		129CB0371F83DE5F0039016A /* ZYCRecommendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCRecommendViewController.xib; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF81F1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baisibudejie_pro.xcdatamodel; sourceTree = "<group>"; };
 		12CCF8211F5EF0C00019E988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,6 +78,14 @@
 		12CCF82B1F5EF0C70019E988 /* baisibudejie-proUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "baisibudejie-proUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF82F1F5EF0C70019E988 /* baisibudejie_proUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = baisibudejie_proUITests.m; sourceTree = "<group>"; };
 		12CCF8311F5EF0C70019E988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12FE4B971F873897001CD643 /* ZYCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCNavigationController.h; sourceTree = "<group>"; };
+		12FE4B981F873897001CD643 /* ZYCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCNavigationController.m; sourceTree = "<group>"; };
+		12FE4B9A1F87397B001CD643 /* Foundation+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		2A35A216CFA1934680D0CABE /* Pods-baisibudejie-proUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-proUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-proUITests/Pods-baisibudejie-proUITests.release.xcconfig"; sourceTree = "<group>"; };
+		68BF424DA1771437E5914AAA /* Pods-baisibudejie-proUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-proUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-proUITests/Pods-baisibudejie-proUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		94453FD44617546F5956BE9A /* libPods-baisibudejie-proUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baisibudejie-proUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		957DC7938FC6A836052CAE06 /* Pods-baisibudejie-pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-pro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro.debug.xcconfig"; sourceTree = "<group>"; };
+		A5DDEC683FC06DD02B05B407 /* libPods-baisibudejie-pro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-baisibudejie-pro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6024F547A0844366175776E /* libPods-baisibudejie-pro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86AD902B87DA3FA09C77B4F0 /* libPods-baisibudejie-proUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +170,9 @@
 				129C61A41F619F5C0061AC67 /* ZYCFriendTrendsViewController.h */,
 				129C61A51F619F5C0061AC67 /* ZYCFriendTrendsViewController.m */,
 				129C61A61F619F5C0061AC67 /* ZYCFriendTrendsViewController.xib */,
+				129CB0351F83DE5F0039016A /* ZYCRecommendViewController.h */,
+				129CB0361F83DE5F0039016A /* ZYCRecommendViewController.m */,
+				129CB0371F83DE5F0039016A /* ZYCRecommendViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -254,6 +277,7 @@
 		129C61BA1F619F5C0061AC67 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				12FE4B9A1F87397B001CD643 /* Foundation+Log.m */,
 				129C61BB1F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.h */,
 				129C61BC1F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.m */,
 				129C61BD1F619F5C0061AC67 /* UIView+ZYCExtention.h */,
@@ -267,6 +291,8 @@
 			children = (
 				129C61C01F619F5C0061AC67 /* ZYCTabBarController.h */,
 				129C61C11F619F5C0061AC67 /* ZYCTabBarController.m */,
+				12FE4B971F873897001CD643 /* ZYCNavigationController.h */,
+				12FE4B981F873897001CD643 /* ZYCNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -293,6 +319,8 @@
 				12CCF8111F5EF0BE0019E988 /* baisibudejie-pro */,
 				12CCF82E1F5EF0C70019E988 /* baisibudejie-proUITests */,
 				12CCF8101F5EF0BE0019E988 /* Products */,
+				E30C9712316B4647BD6BB533 /* Pods */,
+				EFAC58DAFB04BC33FB676003 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,6 +361,26 @@
 			path = "baisibudejie-proUITests";
 			sourceTree = "<group>";
 		};
+		E30C9712316B4647BD6BB533 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				957DC7938FC6A836052CAE06 /* Pods-baisibudejie-pro.debug.xcconfig */,
+				08A339B69BBAB719148CAC9E /* Pods-baisibudejie-pro.release.xcconfig */,
+				68BF424DA1771437E5914AAA /* Pods-baisibudejie-proUITests.debug.xcconfig */,
+				2A35A216CFA1934680D0CABE /* Pods-baisibudejie-proUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EFAC58DAFB04BC33FB676003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5DDEC683FC06DD02B05B407 /* libPods-baisibudejie-pro.a */,
+				94453FD44617546F5956BE9A /* libPods-baisibudejie-proUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -340,9 +388,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12CCF8341F5EF0C70019E988 /* Build configuration list for PBXNativeTarget "baisibudejie-pro" */;
 			buildPhases = (
+				1C56CBD585F9E93890A58208 /* [CP] Check Pods Manifest.lock */,
 				12CCF80B1F5EF0BE0019E988 /* Sources */,
 				12CCF80C1F5EF0BE0019E988 /* Frameworks */,
 				12CCF80D1F5EF0BE0019E988 /* Resources */,
+				65F430F0FF7302B61CA58452 /* [CP] Embed Pods Frameworks */,
+				F67F4A7EBB837954685F8651 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -357,9 +408,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12CCF8371F5EF0C70019E988 /* Build configuration list for PBXNativeTarget "baisibudejie-proUITests" */;
 			buildPhases = (
+				E20AAA2217F008D4F1C24017 /* [CP] Check Pods Manifest.lock */,
 				12CCF8271F5EF0C70019E988 /* Sources */,
 				12CCF8281F5EF0C70019E988 /* Frameworks */,
 				12CCF8291F5EF0C70019E988 /* Resources */,
+				13C175CE9F7DE977ED24A2A9 /* [CP] Embed Pods Frameworks */,
+				EAE84B107EB7B7E131FEE795 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -378,7 +432,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = ZYC;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = wpzyc;
 				TargetAttributes = {
 					12CCF80E1F5EF0BE0019E988 = {
@@ -418,6 +472,7 @@
 			files = (
 				129C61C91F619F5C0061AC67 /* ZYCEssenceViewController.xib in Resources */,
 				129C61CB1F619F5C0061AC67 /* ZYCFriendTrendsViewController.xib in Resources */,
+				129CB0391F83DE5F0039016A /* ZYCRecommendViewController.xib in Resources */,
 				129C61CF1F619F5C0061AC67 /* ZYCNewViewController.xib in Resources */,
 				12CCF8221F5EF0C00019E988 /* Assets.xcassets in Resources */,
 				129C61CD1F619F5C0061AC67 /* ZYCMeViewController.xib in Resources */,
@@ -433,13 +488,108 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13C175CE9F7DE977ED24A2A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-baisibudejie-proUITests/Pods-baisibudejie-proUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C56CBD585F9E93890A58208 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65F430F0FF7302B61CA58452 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E20AAA2217F008D4F1C24017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE84B107EB7B7E131FEE795 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-baisibudejie-proUITests/Pods-baisibudejie-proUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F67F4A7EBB837954685F8651 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		12CCF80B1F5EF0BE0019E988 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				129C61D41F619F5C0061AC67 /* main.m in Sources */,
+				12FE4B9B1F87397B001CD643 /* Foundation+Log.m in Sources */,
 				129C61D31F619F5C0061AC67 /* ZYCTabBarController.m in Sources */,
+				12FE4B991F873897001CD643 /* ZYCNavigationController.m in Sources */,
 				129C61D21F619F5C0061AC67 /* UIView+ZYCExtention.m in Sources */,
 				129C61C81F619F5C0061AC67 /* ZYCEssenceViewController.m in Sources */,
 				129C61D11F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.m in Sources */,
@@ -448,6 +598,7 @@
 				129C61D01F619F5C0061AC67 /* AppDelegate.m in Sources */,
 				129C61CA1F619F5C0061AC67 /* ZYCFriendTrendsViewController.m in Sources */,
 				12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */,
+				129CB0381F83DE5F0039016A /* ZYCRecommendViewController.m in Sources */,
 				129C61CC1F619F5C0061AC67 /* ZYCMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,7 +632,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -489,7 +642,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -513,10 +670,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				OTHER_LDFLAGS = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				SDKROOT = iphoneos11.0;
 			};
 			name = Debug;
 		};
@@ -530,7 +689,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -538,7 +699,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -556,19 +721,23 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				OTHER_LDFLAGS = "-all_load";
+				"OTHER_LDFLAGS[arch=*]" = "-all_load";
+				SDKROOT = iphoneos11.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		12CCF8351F5EF0C70019E988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 957DC7938FC6A836052CAE06 /* Pods-baisibudejie-pro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "baisibudejie-pro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wpzyc.baisibudejie-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -577,10 +746,12 @@
 		};
 		12CCF8361F5EF0C70019E988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 08A339B69BBAB719148CAC9E /* Pods-baisibudejie-pro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "baisibudejie-pro/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.wpzyc.baisibudejie-pro";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -589,6 +760,7 @@
 		};
 		12CCF8381F5EF0C70019E988 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68BF424DA1771437E5914AAA /* Pods-baisibudejie-proUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "baisibudejie-proUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -600,6 +772,7 @@
 		};
 		12CCF8391F5EF0C70019E988 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A35A216CFA1934680D0CABE /* Pods-baisibudejie-proUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "baisibudejie-proUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

@@ -7,7 +7,7 @@
 //
 
 #import "ZYCFriendTrendsViewController.h"
-
+#import "ZYCRecommendViewController.h"
 @interface ZYCFriendTrendsViewController ()
 
 @end
@@ -24,7 +24,8 @@
 }
 - (void)buttonClick
 {
-    ZYCLogFuc;
+    ZYCRecommendViewController *vc = [[ZYCRecommendViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

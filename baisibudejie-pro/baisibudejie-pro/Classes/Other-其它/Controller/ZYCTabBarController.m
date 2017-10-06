@@ -11,6 +11,7 @@
 #import "ZYCNewViewController.h"
 #import "ZYCFriendTrendsViewController.h"
 #import "ZYCMeViewController.h"
+#import "ZYCNavigationController.h"
 
 #import "ZYCTabBar.h"
 @interface ZYCTabBarController ()
@@ -49,7 +50,7 @@
     vc.tabBarItem.title = title;
     vc.tabBarItem.image = [UIImage imageNamed:imageName];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
-    UINavigationController *naVc = [[UINavigationController alloc]initWithRootViewController:vc];
+    ZYCNavigationController *naVc = [[ZYCNavigationController alloc]initWithRootViewController:vc];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
     [self addChildViewController:naVc];
 }
