@@ -51,7 +51,7 @@
     vc.tabBarItem.image = [UIImage imageNamed:imageName];
     vc.tabBarItem.selectedImage = [UIImage imageNamed:selectedImageName];
     ZYCNavigationController *naVc = [[ZYCNavigationController alloc]initWithRootViewController:vc];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    
     [self addChildViewController:naVc];
 }
 - (void)didReceiveMemoryWarning {
