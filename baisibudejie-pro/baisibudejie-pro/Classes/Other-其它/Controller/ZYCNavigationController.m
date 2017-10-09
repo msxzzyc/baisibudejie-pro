@@ -34,7 +34,7 @@
 {
     
     
-    viewController.view;
+//    viewController.view;
     if (self.childViewControllers.count > 0 ) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [button setTitle:@"返回" forState:UIControlStateNormal];
@@ -43,7 +43,7 @@
         
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-        button.backgroundColor = [UIColor redColor];
+       
 //        [button sizeToFit];
         
         

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="category" id="KGk-i7-Jjw" customClass="ZYCRecommenCategoryCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UaG-dL-dqX" userLabel="指示器">
+                        <rect key="frame" x="0.0" y="0.0" width="5" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="5" id="AMx-39-clh"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRQ-YD-4gt" userLabel="底部的分割线">
+                        <rect key="frame" x="0.0" y="42" width="320" height="2"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="tvF-W9-IB6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="uRQ-YD-4gt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="M74-Pl-FJW"/>
+                    <constraint firstAttribute="bottom" secondItem="uRQ-YD-4gt" secondAttribute="bottom" id="QBo-TZ-g3L"/>
+                    <constraint firstItem="UaG-dL-dqX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WsA-SF-fgK"/>
+                    <constraint firstAttribute="bottom" secondItem="UaG-dL-dqX" secondAttribute="bottom" id="XDd-6d-LhC"/>
+                    <constraint firstItem="UaG-dL-dqX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="q3f-RH-4Dx"/>
+                    <constraint firstAttribute="trailing" secondItem="uRQ-YD-4gt" secondAttribute="trailing" id="zog-qw-Ndf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="selectedIndicator" destination="UaG-dL-dqX" id="h2R-89-Enu"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

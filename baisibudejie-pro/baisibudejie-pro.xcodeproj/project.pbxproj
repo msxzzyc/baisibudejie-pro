@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12313E0D1F8A524200441AAF /* ZYCRecommendCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 12313E0C1F8A524200441AAF /* ZYCRecommendCategory.m */; };
+		12313E111F8A5A3600441AAF /* ZYCRecommenCategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12313E0F1F8A5A3600441AAF /* ZYCRecommenCategoryCell.m */; };
+		12313E121F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12313E101F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib */; };
 		129C61C81F619F5C0061AC67 /* ZYCEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C619E1F619F5C0061AC67 /* ZYCEssenceViewController.m */; };
 		129C61C91F619F5C0061AC67 /* ZYCEssenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129C619F1F619F5C0061AC67 /* ZYCEssenceViewController.xib */; };
 		129C61CA1F619F5C0061AC67 /* ZYCFriendTrendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61A51F619F5C0061AC67 /* ZYCFriendTrendsViewController.m */; };
@@ -44,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		08A339B69BBAB719148CAC9E /* Pods-baisibudejie-pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-pro.release.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro.release.xcconfig"; sourceTree = "<group>"; };
+		12313E0B1F8A524200441AAF /* ZYCRecommendCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendCategory.h; sourceTree = "<group>"; };
+		12313E0C1F8A524200441AAF /* ZYCRecommendCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendCategory.m; sourceTree = "<group>"; };
+		12313E0E1F8A5A3600441AAF /* ZYCRecommenCategoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommenCategoryCell.h; sourceTree = "<group>"; };
+		12313E0F1F8A5A3600441AAF /* ZYCRecommenCategoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommenCategoryCell.m; sourceTree = "<group>"; };
+		12313E101F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCRecommenCategoryCell.xib; sourceTree = "<group>"; };
 		129C619D1F619F5C0061AC67 /* ZYCEssenceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCEssenceViewController.h; sourceTree = "<group>"; };
 		129C619E1F619F5C0061AC67 /* ZYCEssenceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCEssenceViewController.m; sourceTree = "<group>"; };
 		129C619F1F619F5C0061AC67 /* ZYCEssenceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCEssenceViewController.xib; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 		129C61A71F619F5C0061AC67 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				12313E0B1F8A524200441AAF /* ZYCRecommendCategory.h */,
+				12313E0C1F8A524200441AAF /* ZYCRecommendCategory.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +197,9 @@
 		129C61A81F619F5C0061AC67 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12313E0E1F8A5A3600441AAF /* ZYCRecommenCategoryCell.h */,
+				12313E0F1F8A5A3600441AAF /* ZYCRecommenCategoryCell.m */,
+				12313E101F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -471,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				129C61C91F619F5C0061AC67 /* ZYCEssenceViewController.xib in Resources */,
+				12313E121F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib in Resources */,
 				129C61CB1F619F5C0061AC67 /* ZYCFriendTrendsViewController.xib in Resources */,
 				129CB0391F83DE5F0039016A /* ZYCRecommendViewController.xib in Resources */,
 				129C61CF1F619F5C0061AC67 /* ZYCNewViewController.xib in Resources */,
@@ -594,11 +608,13 @@
 				129C61C81F619F5C0061AC67 /* ZYCEssenceViewController.m in Sources */,
 				129C61D11F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.m in Sources */,
 				129C61CE1F619F5C0061AC67 /* ZYCNewViewController.m in Sources */,
+				12313E0D1F8A524200441AAF /* ZYCRecommendCategory.m in Sources */,
 				129C61D51F619F5C0061AC67 /* ZYCTabBar.m in Sources */,
 				129C61D01F619F5C0061AC67 /* AppDelegate.m in Sources */,
 				129C61CA1F619F5C0061AC67 /* ZYCFriendTrendsViewController.m in Sources */,
 				12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */,
 				129CB0381F83DE5F0039016A /* ZYCRecommendViewController.m in Sources */,
+				12313E111F8A5A3600441AAF /* ZYCRecommenCategoryCell.m in Sources */,
 				129C61CC1F619F5C0061AC67 /* ZYCMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

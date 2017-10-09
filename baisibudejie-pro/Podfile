@@ -10,6 +10,7 @@ pod “SDWebImage”
 pod “SVProgressHUD”
 pod “pop”
 pod “NJKWebViewProgress”
+pod “MJExtension”
   # Pods for baisibudejie-pro
 
 
@@ -23,6 +24,7 @@ pod “SDWebImage”
 pod “SVProgressHUD”
 pod “pop”
 pod “NJKWebViewProgress”
+pod “MJExtension”
   end
 
 end

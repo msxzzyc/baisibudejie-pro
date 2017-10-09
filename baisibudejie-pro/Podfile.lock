@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - MJExtension (3.0.13)
   - NJKWebViewProgress (0.2.3):
     - NJKWebViewProgress/Core (= 0.2.3)
     - NJKWebViewProgress/ProgressView (= 0.2.3)
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - MJExtension
   - NJKWebViewProgress
   - pop
   - SDWebImage
@@ -34,11 +36,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   SDWebImage: 0e435c14e402a6730315a0fb79f95e68654d55a4
   SVProgressHUD: db27c54e6e18bc903341661fc9feb55e04905cc4
 
-PODFILE CHECKSUM: 6283acb55728c537756ba22328dd1d6e637a5855
+PODFILE CHECKSUM: 167f83b40f519f7bc8256bb9de38b183b158f0cb
 
 COCOAPODS: 1.2.1
