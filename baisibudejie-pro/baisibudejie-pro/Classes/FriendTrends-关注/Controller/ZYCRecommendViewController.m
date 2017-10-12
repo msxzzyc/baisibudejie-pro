@@ -27,21 +27,11 @@
 static NSString *const ZYCCategoryId = @"category";
 static NSString *const ZYCUserId = @"user";
 
-- (void)setUpTableView
-{
-    [self.categoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommenCategoryCell class]) bundle:nil] forCellReuseIdentifier:ZYCCategoryId];
-    [self.userTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommendUserCell class]) bundle:nil] forCellReuseIdentifier:ZYCUserId];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.categoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-    self.userTableView.contentInset = self.categoryTableView.contentInset;
-    self.userTableView.rowHeight = 70;
-    self.navigationItem.title = @"推荐关注";
-    self.view.backgroundColor = ZYCGlobalBg;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setUpTableView];
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
@@ -60,7 +50,18 @@ static NSString *const ZYCUserId = @"user";
     }];
     
 }
-
+- (void)setUpTableView
+{
+    [self.categoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommenCategoryCell class]) bundle:nil] forCellReuseIdentifier:ZYCCategoryId];
+    [self.userTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommendUserCell class]) bundle:nil] forCellReuseIdentifier:ZYCUserId];
+    
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.categoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+//    self.userTableView.contentInset = self.categoryTableView.contentInset;
+    self.userTableView.rowHeight = 70;
+    self.navigationItem.title = @"推荐关注";
+    self.view.backgroundColor = ZYCGlobalBg;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
