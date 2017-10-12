@@ -18,8 +18,8 @@
     [super awakeFromNib];
     // Initialization code
     self.backgroundColor = ZYCRGBColor(244, 244, 244);
-    self.textLabel.textColor = ZYCRGBColor(78, 78, 78);
-    self.textLabel.highlightedTextColor = ZYCRGBColor(219, 21, 26);
+//    self.textLabel.textColor = ZYCRGBColor(78, 78, 78);
+//    self.textLabel.highlightedTextColor = ZYCRGBColor(219, 21, 26);
     
     self.selectedIndicator.backgroundColor = ZYCRGBColor(219, 21, 26);
 //    UIView *bg = [[UIView alloc]init];

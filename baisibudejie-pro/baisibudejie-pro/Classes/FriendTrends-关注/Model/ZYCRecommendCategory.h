@@ -12,4 +12,5 @@
 @property(nonatomic,assign)NSInteger id;
 @property(nonatomic,assign)NSInteger count;
 @property(nonatomic,copy)NSString *name;
+@property(nonatomic,strong)NSMutableArray *users;
 @end

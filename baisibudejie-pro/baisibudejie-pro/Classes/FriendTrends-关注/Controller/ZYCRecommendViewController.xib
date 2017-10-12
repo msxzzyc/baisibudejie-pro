@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZYCRecommendViewController">
             <connections>
                 <outlet property="categoryTableView" destination="Q52-qT-Xck" id="gsw-PL-uz5"/>
+                <outlet property="userTableView" destination="kF8-vS-xAZ" id="T1I-wF-QGx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,18 +29,30 @@
                     </constraints>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="qDa-rQ-R5y"/>
-                        <outlet property="delegate" destination="-1" id="vy0-f0-Pb4"/>
+                        <outlet property="dataSource" destination="-1" id="NDL-9C-ETT"/>
+                        <outlet property="delegate" destination="-1" id="PTO-45-Ej1"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kF8-vS-xAZ" userLabel="右侧">
+                    <rect key="frame" x="78" y="0.0" width="297" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="9D4-Et-c8B"/>
                     </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="kF8-vS-xAZ" secondAttribute="bottom" id="6uC-73-R3X"/>
                 <constraint firstItem="Q52-qT-Xck" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="QS0-2B-Uib"/>
+                <constraint firstItem="kF8-vS-xAZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g9n-d4-d7z"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Q52-qT-Xck" secondAttribute="bottom" id="mVD-Nz-Usd"/>
                 <constraint firstItem="Q52-qT-Xck" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="mkv-wn-r98"/>
+                <constraint firstItem="kF8-vS-xAZ" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="p6b-GC-TlP"/>
+                <constraint firstItem="kF8-vS-xAZ" firstAttribute="leading" secondItem="Q52-qT-Xck" secondAttribute="trailing" constant="8" id="v2v-jz-Wge"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-137.5" y="49.5"/>
         </view>
     </objects>
 </document>
