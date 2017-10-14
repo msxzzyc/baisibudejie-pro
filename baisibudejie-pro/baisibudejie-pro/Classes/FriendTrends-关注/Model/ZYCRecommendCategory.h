@@ -13,4 +13,6 @@
 @property(nonatomic,assign)NSInteger count;
 @property(nonatomic,copy)NSString *name;
 @property(nonatomic,strong)NSMutableArray *users;
+@property(nonatomic,assign)NSInteger total;
+@property(nonatomic,assign)NSInteger currentPage;
 @end
