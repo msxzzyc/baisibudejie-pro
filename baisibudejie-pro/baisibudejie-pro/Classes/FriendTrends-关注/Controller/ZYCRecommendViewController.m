@@ -58,9 +58,9 @@ static NSString *const ZYCUserId = @"user";
     [self.categoryTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommenCategoryCell class]) bundle:nil] forCellReuseIdentifier:ZYCCategoryId];
     [self.userTableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCRecommendUserCell class]) bundle:nil] forCellReuseIdentifier:ZYCUserId];
     
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.categoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
-//    self.userTableView.contentInset = self.categoryTableView.contentInset;
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.categoryTableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    self.userTableView.contentInset = self.categoryTableView.contentInset;
     self.userTableView.rowHeight = 70;
     self.navigationItem.title = @"推荐关注";
     self.view.backgroundColor = ZYCGlobalBg;
@@ -70,34 +70,72 @@ static NSString *const ZYCUserId = @"user";
 
 - (void)setUpRefresh
 {
-    self.userTableView.tableFooterView = [MJRefreshBackFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
-    
+    self.userTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
+    self.userTableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
 }
 - (void)loadMoreUsers
 {
-    ZYCRecommendCategory *category =  ZYCSelectedCategory;
+    ZYCRecommendCategory *c =  ZYCSelectedCategory;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"subscribe";
-    params[@"category_id"] = @([ZYCSelectedCategory id]);
-    params[@"page"] = @(++category.currentPage);
+    params[@"category_id"] = @(c.id);
+    params[@"page"] = @(++c.currentPage);
     
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
         
-        [category.users addObjectsFromArray:users];
+        [c.users addObjectsFromArray:users];
         [self.userTableView reloadData];
-        if (category.count == category.total) {
-            [self.userTableView.footer noticeNoMoreData];
-        }else{
-            [self.userTableView.footer endRefreshing];
-        }
+        
+        [self checkFooterState];
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZYCLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败！"];
+        [self.userTableView.mj_footer endRefreshing];
         
     }];
    
+}
+
+- (void)loadNewUsers
+{
+    ZYCRecommendCategory *rc = ZYCSelectedCategory;
+    rc.currentPage = 1;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"subscribe";
+    params[@"category_id"] = @(rc.id);
+    params[@"page"] = @(rc.currentPage);
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
+        [rc.users removeAllObjects];
+        [rc.users addObjectsFromArray:users];
+        rc.total = [responseObject[@"total"] integerValue];
+        [self.userTableView reloadData];
+        
+        [self.userTableView.mj_header endRefreshing];
+
+        [self checkFooterState];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        ZYCLog(@"%@",error);
+        [SVProgressHUD showErrorWithStatus:@"加载用户数据失败！"];
+        [self.userTableView.mj_header endRefreshing];
+    }];
+  
+}
+
+- (void)checkFooterState
+{
+    ZYCRecommendCategory *rc = ZYCSelectedCategory;
+    self.userTableView.mj_footer.hidden = (rc.users.count == 0);
+    if (rc.count == rc.total) {
+        [self.userTableView.mj_footer noticeNoMoreData];
+    }else{
+        [self.userTableView.mj_footer endRefreshing];
+    }
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -105,16 +143,10 @@ static NSString *const ZYCUserId = @"user";
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (tableView == self.categoryTableView) {
-        return self.categories.count;
-    }else{
-        ZYCRecommendCategory *category = ZYCSelectedCategory;
-        NSInteger count = category.users.count;
-        
-        self.userTableView.tableFooterView.hidden = (count == 0);
-        return category.users.count;
-        
-    }
+    if (tableView == self.categoryTableView) return self.categories.count;
+    
+    [self checkFooterState];
+    return [ZYCSelectedCategory users].count;
     
 }
 
@@ -131,8 +163,7 @@ static NSString *const ZYCUserId = @"user";
         cell.user = category.users[indexPath.row];
         return cell; 
     }
-    
-    
+   
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -143,27 +174,9 @@ static NSString *const ZYCUserId = @"user";
     } else {
         [self.userTableView reloadData];
     
-        category.currentPage = 1;
-        NSMutableDictionary *params = [NSMutableDictionary dictionary];
-        params[@"a"] = @"list";
-        params[@"c"] = @"subscribe";
-        params[@"category_id"] = @([ZYCSelectedCategory id]);
-        params[@"page"] = @(category.currentPage);
-        [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
-            
-            [category.users addObjectsFromArray:users];
-            category.total = [responseObject[@"total"] integerValue];
-            [self.userTableView reloadData];
-            
-            if (category.users.count == category.total) {
-                [self.userTableView.footer noticeNoMoreData];
-            }
-            
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            ZYCLog(@"%@",error);
-            
-        }];
+        [self.userTableView.mj_header beginRefreshing];
+        
+        
     }
 }
 /*
