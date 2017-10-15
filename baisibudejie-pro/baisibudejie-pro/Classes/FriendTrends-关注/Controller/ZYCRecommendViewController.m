@@ -19,8 +19,9 @@
 @interface ZYCRecommendViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *categoryTableView;
 @property (weak, nonatomic) IBOutlet UITableView *userTableView;
-
+@property(strong,nonatomic)NSMutableDictionary *params;
 @property(nonatomic,strong)NSArray *categories;
+@property(nonatomic,strong)AFHTTPSessionManager *manager;
 
 @end
 
@@ -29,17 +30,28 @@
 static NSString *const ZYCCategoryId = @"category";
 static NSString *const ZYCUserId = @"user";
 
-
+- (AFHTTPSessionManager *)manager
+{
+    if (!_manager) {
+        _manager = [AFHTTPSessionManager manager];
+    }
+    return _manager;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUpTableView];
     [self setUpRefresh];
+    [self loadCategories];
+    
+}
+- (void)loadCategories
+{
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeBlack];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"category";
     params[@"c"] = @"subscribe";
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [SVProgressHUD dismiss];
         ZYCLog(@"%@",responseObject);
         self.categories = [ZYCRecommendCategory objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -51,7 +63,6 @@ static NSString *const ZYCUserId = @"user";
         
         [SVProgressHUD showErrorWithStatus:@"加载推荐信息失败！"];
     }];
-    
 }
 - (void)setUpTableView
 {
@@ -73,6 +84,7 @@ static NSString *const ZYCUserId = @"user";
     self.userTableView.mj_footer = [MJRefreshAutoFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreUsers)];
     self.userTableView.mj_header = [MJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewUsers)];
 }
+
 - (void)loadMoreUsers
 {
     ZYCRecommendCategory *c =  ZYCSelectedCategory;
@@ -81,8 +93,10 @@ static NSString *const ZYCUserId = @"user";
     params[@"c"] = @"subscribe";
     params[@"category_id"] = @(c.id);
     params[@"page"] = @(++c.currentPage);
-    
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    self.params = params;
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (params != self.params) return ;
+        
         NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
         
         [c.users addObjectsFromArray:users];
@@ -92,6 +106,7 @@ static NSString *const ZYCUserId = @"user";
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZYCLog(@"%@",error);
+        if (params != self.params) return ;
         [SVProgressHUD showErrorWithStatus:@"加载用户数据失败！"];
         [self.userTableView.mj_footer endRefreshing];
         
@@ -108,7 +123,9 @@ static NSString *const ZYCUserId = @"user";
     params[@"c"] = @"subscribe";
     params[@"category_id"] = @(rc.id);
     params[@"page"] = @(rc.currentPage);
-    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    self.params = params;
+    [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        if (params != self.params) return ;
         NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
         [rc.users removeAllObjects];
         [rc.users addObjectsFromArray:users];
@@ -121,6 +138,7 @@ static NSString *const ZYCUserId = @"user";
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZYCLog(@"%@",error);
+        if (params != self.params) return ;
         [SVProgressHUD showErrorWithStatus:@"加载用户数据失败！"];
         [self.userTableView.mj_header endRefreshing];
     }];
@@ -168,6 +186,8 @@ static NSString *const ZYCUserId = @"user";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.userTableView.mj_header endRefreshing];
+    [self.userTableView.mj_footer endRefreshing];
     ZYCRecommendCategory *category = self.categories[indexPath.row];
     if (category.users.count) {
         [self.userTableView reloadData];
@@ -175,9 +195,11 @@ static NSString *const ZYCUserId = @"user";
         [self.userTableView reloadData];
     
         [self.userTableView.mj_header beginRefreshing];
-        
-        
     }
+}
+- (void)dealloc
+{
+    [self.manager.operationQueue cancelAllOperations];
 }
 /*
 #pragma mark - Navigation
