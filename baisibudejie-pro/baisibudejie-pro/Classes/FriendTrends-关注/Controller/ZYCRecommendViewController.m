@@ -95,11 +95,10 @@ static NSString *const ZYCUserId = @"user";
     params[@"page"] = @(++c.currentPage);
     self.params = params;
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (params != self.params) return ;
-        
         NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
         
         [c.users addObjectsFromArray:users];
+        if (params != self.params) return ;
         [self.userTableView reloadData];
         
         [self checkFooterState];
@@ -116,6 +115,7 @@ static NSString *const ZYCUserId = @"user";
 
 - (void)loadNewUsers
 {
+    
     ZYCRecommendCategory *rc = ZYCSelectedCategory;
     rc.currentPage = 1;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -125,11 +125,12 @@ static NSString *const ZYCUserId = @"user";
     params[@"page"] = @(rc.currentPage);
     self.params = params;
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        if (params != self.params) return ;
+        
         NSArray *users =[ZYCRecommendUser objectArrayWithKeyValuesArray: responseObject[@"list"]];
         [rc.users removeAllObjects];
         [rc.users addObjectsFromArray:users];
         rc.total = [responseObject[@"total"] integerValue];
+        if (params != self.params) return ;
         [self.userTableView reloadData];
         
         [self.userTableView.mj_header endRefreshing];
