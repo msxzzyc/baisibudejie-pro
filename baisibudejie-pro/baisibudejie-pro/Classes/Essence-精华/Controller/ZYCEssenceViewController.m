@@ -7,7 +7,7 @@
 //
 
 #import "ZYCEssenceViewController.h"
-
+#import "ZYCRecommendTagsViewController.h"
 @interface ZYCEssenceViewController ()
 
 @end
@@ -27,7 +27,8 @@
 
 - (void)essencebuttonClick
 {
-    ZYCLogFuc;
+    ZYCRecommendTagsViewController *tagsVc = [[ZYCRecommendTagsViewController alloc]init];
+    [self.navigationController pushViewController:tagsVc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
