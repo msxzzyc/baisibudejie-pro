@@ -37,6 +37,15 @@
     self.subNumberLabel.text = subNumber;
     
 }
+
+- (void)setFrame:(CGRect)frame
+{
+    frame.origin.x = 5;
+    
+    frame.size.width -= 2*frame.origin.x;
+    frame.size.height -= 1;
+    [super setFrame:frame];
+}
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
