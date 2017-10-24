@@ -12,18 +12,34 @@
 static NSString *const ZYCPlaceholderColorKeyPath = @"_placeholderLabel.textColor";
 @implementation ZYCTextField
 
-//+ (void)initialize
-//{
-//    unsigned int count = 0;
-//    Ivar *ivars = class_copyIvarList([UITextField class], &count);
-//    for (int i = 0; i<count; i++) {
++ (void)initialize
+{
+    [self getIvars];
+//    [self getProperties];
+}
++ (void)getProperties
+{
+    unsigned int count = 0;
+    objc_property_t *properties= class_copyPropertyList([UITextField class], &count);
+    for (int i = 0; i<count; i++) {
+        //        objc_property_t property = *(properties +i);
+        objc_property_t property = properties[i];
+        ZYCLog(@"%s<------>%s",property_getName(property),property_getAttributes(property));
+    }
+    
+    free(properties);
+}
++ (void)getIvars
+{
+    unsigned int count = 0;
+    Ivar *ivars = class_copyIvarList([UITextField class], &count);
+    for (int i = 0; i<count; i++) {
 //        Ivar ivar = *(ivars + i);
-//        Ivar ivar = ivars[i];
-//        ZYCLog(@"%s",ivar_getName(ivar));
-//    }
-//    free(ivars);
-//
-//}
+        Ivar ivar = ivars[i];
+        ZYCLog(@"%s<----->%s",ivar_getName(ivar),ivar_getTypeEncoding(ivar));
+    }
+    free(ivars);
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -36,6 +52,7 @@ static NSString *const ZYCPlaceholderColorKeyPath = @"_placeholderLabel.textColo
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+  
     
 //    UILabel *placeholderLabel = [self valueForKeyPath:@"_placeholderLabel"];
 //    placeholderLabel.textColor = [UIColor whiteColor];
