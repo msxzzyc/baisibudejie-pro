@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZYCTabBarController.h"
+#import "ZYCPushGuideView.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +22,10 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     self.window.rootViewController = [[ZYCTabBarController alloc]init];
+    
     [self.window makeKeyAndVisible];
+    ZYCLog(@"%@",kCFBundleInfoDictionaryVersionKey);
+    [ZYCPushGuideView show];
     return YES;
 }
 
