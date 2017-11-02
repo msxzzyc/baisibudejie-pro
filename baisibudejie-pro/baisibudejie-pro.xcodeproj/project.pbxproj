@@ -42,6 +42,7 @@
 		129C61D51F619F5C0061AC67 /* ZYCTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 129C61C71F619F5C0061AC67 /* ZYCTabBar.m */; };
 		129CB0381F83DE5F0039016A /* ZYCRecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 129CB0361F83DE5F0039016A /* ZYCRecommendViewController.m */; };
 		129CB0391F83DE5F0039016A /* ZYCRecommendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 129CB0371F83DE5F0039016A /* ZYCRecommendViewController.xib */; };
+		12C936C31FAB580300636136 /* ZYCTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = 12C936C21FAB580300636136 /* ZYCTopic.m */; };
 		12CCF8201F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF81E1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodeld */; };
 		12CCF8221F5EF0C00019E988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12CCF8211F5EF0C00019E988 /* Assets.xcassets */; };
 		12CCF8301F5EF0C70019E988 /* baisibudejie_proUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF82F1F5EF0C70019E988 /* baisibudejie_proUITests.m */; };
@@ -125,6 +126,8 @@
 		129CB0351F83DE5F0039016A /* ZYCRecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendViewController.h; sourceTree = "<group>"; };
 		129CB0361F83DE5F0039016A /* ZYCRecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendViewController.m; sourceTree = "<group>"; };
 		129CB0371F83DE5F0039016A /* ZYCRecommendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCRecommendViewController.xib; sourceTree = "<group>"; };
+		12C936C11FAB580300636136 /* ZYCTopic.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTopic.h; sourceTree = "<group>"; };
+		12C936C21FAB580300636136 /* ZYCTopic.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTopic.m; sourceTree = "<group>"; };
 		12CCF80F1F5EF0BE0019E988 /* baisibudejie-pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "baisibudejie-pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CCF81F1F5EF0C00019E988 /* baisibudejie_pro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = baisibudejie_pro.xcdatamodel; sourceTree = "<group>"; };
 		12CCF8211F5EF0C00019E988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,6 +218,8 @@
 			children = (
 				12D2A8BE1F93A91E00DDE8CC /* ZYCRecommendTag.h */,
 				12D2A8BF1F93A91E00DDE8CC /* ZYCRecommendTag.m */,
+				12C936C11FAB580300636136 /* ZYCTopic.h */,
+				12C936C21FAB580300636136 /* ZYCTopic.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -699,6 +704,7 @@
 				129C61C81F619F5C0061AC67 /* ZYCEssenceViewController.m in Sources */,
 				129C61D11F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.m in Sources */,
 				129C61CE1F619F5C0061AC67 /* ZYCNewViewController.m in Sources */,
+				12C936C31FAB580300636136 /* ZYCTopic.m in Sources */,
 				1258AAB81FA8B069000C1D56 /* ZYCVideoViewController.m in Sources */,
 				12313E0D1F8A524200441AAF /* ZYCRecommendCategory.m in Sources */,
 				1258AABB1FA8B084000C1D56 /* ZYCVoiceViewController.m in Sources */,

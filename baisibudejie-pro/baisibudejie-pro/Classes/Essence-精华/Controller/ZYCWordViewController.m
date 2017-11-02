@@ -7,23 +7,101 @@
 //
 
 #import "ZYCWordViewController.h"
-
+#import <AFNetworking.h>
+#import <UIImageView+WebCache.h>
+#import "ZYCTopic.h"
+#import <MJExtension.h>
+#import <MJRefresh.h>
 @interface ZYCWordViewController ()
-
+@property(nonatomic,strong)NSMutableArray *topics;
+@property(nonatomic,assign)NSInteger page;
+@property(nonatomic,assign)NSString *maxtime;
 @end
 
 @implementation ZYCWordViewController
-
+- (NSMutableArray *)topics
+{
+    if (!_topics) {
+        _topics = [NSMutableArray array];
+    }
+    return _topics;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self setRefresh];
+   
 }
 
+- (void)setRefresh
+{
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewTopic)];
+    
+    self.tableView.mj_header.automaticallyChangeAlpha = YES;
+    [self.tableView.mj_header beginRefreshing];
+    
+    
+    self.tableView.mj_footer = [MJRefreshBackFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopic)];
+    
+//    self.tableView.mj_footer.hidden = YES;
+}
+- (void)loadNewTopic
+{
+    self.page = 0;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //        ZYCLog(@"%@",responseObject);
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        self.topics = [ZYCTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //        [responseObject writeToFile:@"/Users/zyc/Desktop/duanzi.plist" atomically:YES];
+        
+        
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_header endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        ZYCLog(@"%@",error);
+        [self.tableView.mj_header endRefreshing];
+        
+        
+        
+    }];
+}
+
+- (void)loadMoreTopic
+{
+    self.page++;
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"a"] = @"list";
+    params[@"c"] = @"data";
+    params[@"type"] = @"29";
+    params[@"page"] = @(self.page);
+    params[@"maxtime"] = self.maxtime;
+    
+    [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //        ZYCLog(@"%@",responseObject);
+        self.maxtime = responseObject[@"info"][@"maxtime"];
+        NSArray *newTopics = [ZYCTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
+        //        [responseObject writeToFile:@"/Users/zyc/Desktop/duanzi.plist" atomically:YES];
+        [self.topics addObjectsFromArray:newTopics];
+        
+        [self.tableView reloadData];
+        
+        [self.tableView.mj_footer endRefreshing];
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        ZYCLog(@"%@",error);
+        [self.tableView.mj_footer endRefreshing];
+        
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,7 +111,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 50;
+    return self.topics.count;
 }
 
 
@@ -43,10 +121,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+        cell.backgroundColor = [UIColor blueColor];
     }
-    
-    cell.textLabel.text = [NSString stringWithFormat:@"%@-----%zd",[self class],indexPath.row];
+    ZYCTopic *topic = self.topics[indexPath.row];
+    cell.textLabel.text = topic.name;
+    cell.detailTextLabel.text = topic.text;
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     return cell;
 }
 

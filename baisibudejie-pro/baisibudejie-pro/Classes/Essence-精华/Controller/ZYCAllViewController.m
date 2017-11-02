@@ -49,12 +49,20 @@
  
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
+        cell.backgroundColor = [UIColor blueColor];
+        
     }
  
     cell.textLabel.text = [NSString stringWithFormat:@"%@-----%zd",[self class],indexPath.row];
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    ZYCLog(@"%@",NSStringFromUIEdgeInsets(tableView.contentInset));
+    ZYCLog(@"%@",NSStringFromCGRect(tableView.frame));
+}
 
 /*
 // Override to support conditional editing of the table view.
