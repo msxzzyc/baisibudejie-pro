@@ -16,20 +16,30 @@
 @property(nonatomic,strong)NSMutableArray *topics;
 @property(nonatomic,assign)NSInteger page;
 @property(nonatomic,assign)NSString *maxtime;
+@property(nonatomic,strong)NSDictionary *params;
 @end
 
 @implementation ZYCWordViewController
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self setUpTableView];
+    [self setRefresh];
+    
+}
+- (void)setUpTableView
+{
+    CGFloat top = ZYCTitlesViewY + ZYCTitlesViewH;
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+}
 - (NSMutableArray *)topics
 {
     if (!_topics) {
         _topics = [NSMutableArray array];
     }
     return _topics;
-}
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self setRefresh];
-   
 }
 
 - (void)setRefresh
@@ -40,20 +50,20 @@
     [self.tableView.mj_header beginRefreshing];
     
     
-    self.tableView.mj_footer = [MJRefreshBackFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopic)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopic)];
     
 //    self.tableView.mj_footer.hidden = YES;
 }
 - (void)loadNewTopic
 {
-    self.page = 0;
+    [self.tableView.mj_footer endRefreshing];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @"29";
-    
+    self.params = params;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        if (self.params !=params) return ;
         //        ZYCLog(@"%@",responseObject);
         self.maxtime = responseObject[@"info"][@"maxtime"];
         self.topics = [ZYCTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -64,7 +74,10 @@
         
         [self.tableView.mj_header endRefreshing];
         
+        self.page = 0;
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (self.params !=params) return ;
         ZYCLog(@"%@",error);
         [self.tableView.mj_header endRefreshing];
         
@@ -75,16 +88,18 @@
 
 - (void)loadMoreTopic
 {
+    [self.tableView.mj_header endRefreshing];
     self.page++;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
     params[@"type"] = @"29";
-    params[@"page"] = @(self.page);
+    NSInteger page = self.page + 1;
+    params[@"page"] = @(page);
     params[@"maxtime"] = self.maxtime;
-    
+    self.params = params;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
+        if (self.params !=params) return ;
         //        ZYCLog(@"%@",responseObject);
         self.maxtime = responseObject[@"info"][@"maxtime"];
         NSArray *newTopics = [ZYCTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
@@ -95,8 +110,12 @@
         
         [self.tableView.mj_footer endRefreshing];
         
+        self.page = page;
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZYCLog(@"%@",error);
+        if (self.params !=params) return ;
+//        self.page--;
         [self.tableView.mj_footer endRefreshing];
         
         
@@ -110,6 +129,7 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    self.tableView.mj_footer.hidden = (self.topics.count == 0);
     
     return self.topics.count;
 }

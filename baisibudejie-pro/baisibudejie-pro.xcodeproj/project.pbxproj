@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		120D45701FACAFD600513640 /* ZYCConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 120D456F1FACAFD500513640 /* ZYCConst.m */; };
 		1226FDB61F8D0EE300488C4E /* ZYCRecommendUserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1226FDB41F8D0EE300488C4E /* ZYCRecommendUserCell.m */; };
 		1226FDB71F8D0EE300488C4E /* ZYCRecommendUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1226FDB51F8D0EE300488C4E /* ZYCRecommendUserCell.xib */; };
 		1226FDBA1F8D130A00488C4E /* ZYCRecommendUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1226FDB91F8D130A00488C4E /* ZYCRecommendUser.m */; };
@@ -66,6 +67,8 @@
 
 /* Begin PBXFileReference section */
 		08A339B69BBAB719148CAC9E /* Pods-baisibudejie-pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baisibudejie-pro.release.xcconfig"; path = "Pods/Target Support Files/Pods-baisibudejie-pro/Pods-baisibudejie-pro.release.xcconfig"; sourceTree = "<group>"; };
+		120D456E1FACAFD500513640 /* ZYCConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCConst.h; sourceTree = "<group>"; };
+		120D456F1FACAFD500513640 /* ZYCConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCConst.m; sourceTree = "<group>"; };
 		1226FDB31F8D0EE300488C4E /* ZYCRecommendUserCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendUserCell.h; sourceTree = "<group>"; };
 		1226FDB41F8D0EE300488C4E /* ZYCRecommendUserCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendUserCell.m; sourceTree = "<group>"; };
 		1226FDB51F8D0EE300488C4E /* ZYCRecommendUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCRecommendUserCell.xib; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				129C61BC1F619F5C0061AC67 /* UIBarButtonItem+ZYCExtention.m */,
 				129C61BD1F619F5C0061AC67 /* UIView+ZYCExtention.h */,
 				129C61BE1F619F5C0061AC67 /* UIView+ZYCExtention.m */,
+				120D456E1FACAFD500513640 /* ZYCConst.h */,
+				120D456F1FACAFD500513640 /* ZYCConst.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -693,6 +698,7 @@
 			files = (
 				128D04BB1F94E8D2005BECAE /* ZYCRecommendTagsCell.m in Sources */,
 				129279851F9BAFAE003254E4 /* ZYCVerticalButton.m in Sources */,
+				120D45701FACAFD600513640 /* ZYCConst.m in Sources */,
 				1258AABE1FA8B096000C1D56 /* ZYCPictureViewController.m in Sources */,
 				129C61D41F619F5C0061AC67 /* main.m in Sources */,
 				1226FDB61F8D0EE300488C4E /* ZYCRecommendUserCell.m in Sources */,

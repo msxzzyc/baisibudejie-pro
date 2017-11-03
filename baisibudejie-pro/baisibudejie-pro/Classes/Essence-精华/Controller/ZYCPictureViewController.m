@@ -16,17 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpTableView];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setUpTableView
+{
+    CGFloat top = ZYCTitlesViewY + ZYCTitlesViewH;
+    CGFloat bottom = self.tabBarController.tabBar.height;
+    
+    self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
+    self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
 }
 
 #pragma mark - Table view data source
