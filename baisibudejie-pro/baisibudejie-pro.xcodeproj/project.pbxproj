@@ -49,6 +49,8 @@
 		12CCF8301F5EF0C70019E988 /* baisibudejie_proUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12CCF82F1F5EF0C70019E988 /* baisibudejie_proUITests.m */; };
 		12D2A8BA1F93A5C100DDE8CC /* ZYCRecommendTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D2A8B91F93A5C100DDE8CC /* ZYCRecommendTagsViewController.m */; };
 		12D2A8C01F93A91E00DDE8CC /* ZYCRecommendTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D2A8BF1F93A91E00DDE8CC /* ZYCRecommendTag.m */; };
+		12D44BA51FD4330000482FFC /* ZYCTopicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 12D44BA31FD4330000482FFC /* ZYCTopicCell.m */; };
+		12D44BA61FD4330000482FFC /* ZYCTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */; };
 		12FE4B991F873897001CD643 /* ZYCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FE4B981F873897001CD643 /* ZYCNavigationController.m */; };
 		12FE4B9B1F87397B001CD643 /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 12FE4B9A1F87397B001CD643 /* Foundation+Log.m */; };
 		86AD902B87DA3FA09C77B4F0 /* libPods-baisibudejie-proUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94453FD44617546F5956BE9A /* libPods-baisibudejie-proUITests.a */; };
@@ -142,6 +144,9 @@
 		12D2A8B91F93A5C100DDE8CC /* ZYCRecommendTagsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendTagsViewController.m; sourceTree = "<group>"; };
 		12D2A8BE1F93A91E00DDE8CC /* ZYCRecommendTag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendTag.h; sourceTree = "<group>"; };
 		12D2A8BF1F93A91E00DDE8CC /* ZYCRecommendTag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendTag.m; sourceTree = "<group>"; };
+		12D44BA21FD4330000482FFC /* ZYCTopicCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCTopicCell.h; sourceTree = "<group>"; };
+		12D44BA31FD4330000482FFC /* ZYCTopicCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCTopicCell.m; sourceTree = "<group>"; };
+		12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCTopicCell.xib; sourceTree = "<group>"; };
 		12FE4B971F873897001CD643 /* ZYCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCNavigationController.h; sourceTree = "<group>"; };
 		12FE4B981F873897001CD643 /* ZYCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCNavigationController.m; sourceTree = "<group>"; };
 		12FE4B9A1F87397B001CD643 /* Foundation+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
@@ -233,6 +238,9 @@
 				128D04B81F94E8D2005BECAE /* ZYCRecommendTagsCell.h */,
 				128D04B91F94E8D2005BECAE /* ZYCRecommendTagsCell.m */,
 				128D04BA1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib */,
+				12D44BA21FD4330000482FFC /* ZYCTopicCell.h */,
+				12D44BA31FD4330000482FFC /* ZYCTopicCell.m */,
+				12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -577,6 +585,7 @@
 			files = (
 				1292797F1F9B999B003254E4 /* ZYCLoginRegisterViewController.xib in Resources */,
 				1226FDB71F8D0EE300488C4E /* ZYCRecommendUserCell.xib in Resources */,
+				12D44BA61FD4330000482FFC /* ZYCTopicCell.xib in Resources */,
 				129C61C91F619F5C0061AC67 /* ZYCEssenceViewController.xib in Resources */,
 				12313E121F8A5A3600441AAF /* ZYCRecommenCategoryCell.xib in Resources */,
 				129C61CB1F619F5C0061AC67 /* ZYCFriendTrendsViewController.xib in Resources */,
@@ -722,6 +731,7 @@
 				1292797E1F9B999B003254E4 /* ZYCLoginRegisterViewController.m in Sources */,
 				129A44CF1F9F7D53006D048B /* ZYCPushGuideView.m in Sources */,
 				129CB0381F83DE5F0039016A /* ZYCRecommendViewController.m in Sources */,
+				12D44BA51FD4330000482FFC /* ZYCTopicCell.m in Sources */,
 				12D2A8C01F93A91E00DDE8CC /* ZYCRecommendTag.m in Sources */,
 				12313E111F8A5A3600441AAF /* ZYCRecommenCategoryCell.m in Sources */,
 				1226FDBA1F8D130A00488C4E /* ZYCRecommendUser.m in Sources */,

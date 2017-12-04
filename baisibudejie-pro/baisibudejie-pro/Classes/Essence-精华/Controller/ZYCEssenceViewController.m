@@ -41,7 +41,7 @@
 - (void)setTitleView
 {
     UIView *titleView = [[UIView alloc]init];
-    titleView.width = self.view.width;
+    titleView.width = self.view.width; 
     titleView.height = ZYCTitlesViewH;
     titleView.y = ZYCTitlesViewY;
     

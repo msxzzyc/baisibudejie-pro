@@ -10,12 +10,13 @@
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import "ZYCTopic.h"
+#import "ZYCTopicCell.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
 @interface ZYCWordViewController ()
 @property(nonatomic,strong)NSMutableArray *topics;
 @property(nonatomic,assign)NSInteger page;
-@property(nonatomic,assign)NSString *maxtime;
+@property(nonatomic,strong)NSString *maxtime;
 @property(nonatomic,strong)NSDictionary *params;
 @end
 
@@ -26,6 +27,7 @@
     [self setRefresh];
     
 }
+static NSString *const ZYCTopicCellId = @"topic";
 - (void)setUpTableView
 {
     CGFloat top = ZYCTitlesViewY + ZYCTitlesViewH;
@@ -33,6 +35,12 @@
     
     self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottom, 0);
     self.tableView.scrollIndicatorInsets = self.tableView.contentInset;
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.backgroundColor = [UIColor clearColor];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ZYCTopicCell class]) bundle:nil] forCellReuseIdentifier:ZYCTopicCellId];
+    
 }
 - (NSMutableArray *)topics
 {
@@ -89,7 +97,7 @@
 - (void)loadMoreTopic
 {
     [self.tableView.mj_header endRefreshing];
-    self.page++;
+//    self.page++;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
@@ -137,18 +145,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *ID = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+
+    ZYCTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:ZYCTopicCellId];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-        cell.backgroundColor = [UIColor blueColor];
-    }
-    ZYCTopic *topic = self.topics[indexPath.row];
-    cell.textLabel.text = topic.name;
-    cell.detailTextLabel.text = topic.text;
-    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    cell.topic = self.topics[indexPath.row];
+
     return cell;
+}
+#pragma mark - Table view delegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+    
 }
 
 /*
