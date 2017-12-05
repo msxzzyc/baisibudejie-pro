@@ -8,6 +8,18 @@
 
 #import "ZYCTopicCell.h"
 #import "ZYCTopic.h"
+#import <UIImageView+WebCache.h>
+@interface ZYCTopicCell()
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *createTimeLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *dingButton;
+@property (weak, nonatomic) IBOutlet UIButton *caiButton;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
+@property (weak, nonatomic) IBOutlet UIButton *commentButton;
+
+@end
 @implementation ZYCTopicCell
 
 - (void)awakeFromNib {
@@ -22,11 +34,40 @@
 {
     
     _topic = topic;
-//    cell.textLabel.text = topic.name;
-//    cell.detailTextLabel.text = topic.text;
-//    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
-}
+    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    self.nameLabel.text = topic.name;
+    self.createTimeLabel.text = topic.create_time;
+    
+    [self setButtonTitle:_dingButton count:topic.ding placeholder:@"顶"];
+    [self setButtonTitle:_caiButton count:topic.cai placeholder:@"踩"];
+    [self setButtonTitle:_shareButton count:topic.repost placeholder:@"分享"];
+    [self setButtonTitle:_commentButton count:topic.comment placeholder:@"评论"];
 
+}
+- (void)setButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder
+{
+//    NSString *title = nil;
+//
+//    if (count == 0) {
+//        title = placeholder;
+//
+//    } else if(count > 10000){
+//        title = [NSString stringWithFormat:@"%.1f万",count/10000.0];
+//    }else{
+//        title = [NSString stringWithFormat:@"%zd",count];
+//    }
+//    [button setTitle:title forState:UIControlStateNormal];
+    
+   
+    
+        
+    if(count > 10000){
+        placeholder = [NSString stringWithFormat:@"%.1f万",count/10000.0];
+    }else if(count > 0){
+        placeholder = [NSString stringWithFormat:@"%zd",count];
+    }
+    [button setTitle:placeholder forState:UIControlStateNormal];
+}
 - (void)setFrame:(CGRect)frame
 {
     static CGFloat margin = 10;

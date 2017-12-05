@@ -29,14 +29,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-wu-RQj" userLabel="昵称">
-                        <rect key="frame" x="78" y="18" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="78" y="18" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-bU-xhA" userLabel="时间">
-                        <rect key="frame" x="78" y="52" width="33" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <rect key="frame" x="78" y="53.5" width="31" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -159,7 +159,16 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="124" y="183.5"/>
+            <connections>
+                <outlet property="caiButton" destination="DKA-fh-hCG" id="Xeh-l1-BaX"/>
+                <outlet property="commentButton" destination="3WO-Hj-FX5" id="qOF-X8-Sox"/>
+                <outlet property="createTimeLabel" destination="Ell-bU-xhA" id="kcK-pj-ChS"/>
+                <outlet property="dingButton" destination="U6d-Xc-h6i" id="tlv-s7-FbI"/>
+                <outlet property="nameLabel" destination="FmT-wu-RQj" id="Wd0-NK-LP4"/>
+                <outlet property="profileImageView" destination="OKP-3j-9J6" id="99g-z0-Vmk"/>
+                <outlet property="shareButton" destination="bl4-aq-ZuG" id="drJ-77-esJ"/>
+            </connections>
+            <point key="canvasLocation" x="18" y="174"/>
         </tableViewCell>
     </objects>
     <resources>
