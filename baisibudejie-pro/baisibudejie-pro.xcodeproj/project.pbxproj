@@ -20,6 +20,7 @@
 		1258AABB1FA8B084000C1D56 /* ZYCVoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1258AABA1FA8B084000C1D56 /* ZYCVoiceViewController.m */; };
 		1258AABE1FA8B096000C1D56 /* ZYCPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1258AABD1FA8B096000C1D56 /* ZYCPictureViewController.m */; };
 		1258AAC11FA8B0AA000C1D56 /* ZYCWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1258AAC01FA8B0AA000C1D56 /* ZYCWordViewController.m */; };
+		1258EB151FD82746000A2631 /* NSDate+ZYCExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 1258EB141FD82746000A2631 /* NSDate+ZYCExtention.m */; };
 		128D04BB1F94E8D2005BECAE /* ZYCRecommendTagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 128D04B91F94E8D2005BECAE /* ZYCRecommendTagsCell.m */; };
 		128D04BC1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 128D04BA1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib */; };
 		1292797E1F9B999B003254E4 /* ZYCLoginRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1292797C1F9B999A003254E4 /* ZYCLoginRegisterViewController.m */; };
@@ -93,6 +94,8 @@
 		1258AABD1FA8B096000C1D56 /* ZYCPictureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCPictureViewController.m; sourceTree = "<group>"; };
 		1258AABF1FA8B0AA000C1D56 /* ZYCWordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCWordViewController.h; sourceTree = "<group>"; };
 		1258AAC01FA8B0AA000C1D56 /* ZYCWordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCWordViewController.m; sourceTree = "<group>"; };
+		1258EB131FD82746000A2631 /* NSDate+ZYCExtention.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSDate+ZYCExtention.h"; path = "baisibudejie-pro/Classes/Other-其它/Category/NSDate+ZYCExtention.h"; sourceTree = SOURCE_ROOT; };
+		1258EB141FD82746000A2631 /* NSDate+ZYCExtention.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSDate+ZYCExtention.m"; path = "baisibudejie-pro/Classes/Other-其它/Category/NSDate+ZYCExtention.m"; sourceTree = SOURCE_ROOT; };
 		128D04B81F94E8D2005BECAE /* ZYCRecommendTagsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYCRecommendTagsCell.h; sourceTree = "<group>"; };
 		128D04B91F94E8D2005BECAE /* ZYCRecommendTagsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYCRecommendTagsCell.m; sourceTree = "<group>"; };
 		128D04BA1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZYCRecommendTagsCell.xib; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				128D04BA1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib */,
 				12D44BA21FD4330000482FFC /* ZYCTopicCell.h */,
 				12D44BA31FD4330000482FFC /* ZYCTopicCell.m */,
+				1258EB131FD82746000A2631 /* NSDate+ZYCExtention.h */,
+				1258EB141FD82746000A2631 /* NSDate+ZYCExtention.m */,
 				12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */,
 			);
 			path = View;
@@ -707,6 +712,7 @@
 			files = (
 				128D04BB1F94E8D2005BECAE /* ZYCRecommendTagsCell.m in Sources */,
 				129279851F9BAFAE003254E4 /* ZYCVerticalButton.m in Sources */,
+				1258EB151FD82746000A2631 /* NSDate+ZYCExtention.m in Sources */,
 				120D45701FACAFD600513640 /* ZYCConst.m in Sources */,
 				1258AABE1FA8B096000C1D56 /* ZYCPictureViewController.m in Sources */,
 				129C61D41F619F5C0061AC67 /* main.m in Sources */,
