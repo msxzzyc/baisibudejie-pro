@@ -36,8 +36,11 @@
     _topic = topic;
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
+    
     self.createTimeLabel.text = topic.create_time;
     ZYCLog(@"%@",topic.create_time);
+    
+    
     
     NSDate *now = [NSDate date];
     NSDateFormatter *fmt = [[NSDateFormatter alloc]init];

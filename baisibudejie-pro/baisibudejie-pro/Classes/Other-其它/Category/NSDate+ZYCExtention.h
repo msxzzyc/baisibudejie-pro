@@ -10,4 +10,7 @@
 
 @interface NSDate (ZYCExtention)
 - (NSDateComponents *)deltaFrom:(NSDate *)from;
+- (BOOL)isThisYear;
+- (BOOL)isToday;
+- (BOOL)isYesterday;
 @end
