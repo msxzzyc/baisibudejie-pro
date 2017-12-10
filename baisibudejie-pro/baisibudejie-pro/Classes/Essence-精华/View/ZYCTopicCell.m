@@ -37,15 +37,13 @@
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
     
+    
+//    ZYCLog(@"%@",topic.create_time);
+    
     self.createTimeLabel.text = topic.create_time;
-    ZYCLog(@"%@",topic.create_time);
     
     
     
-    NSDate *now = [NSDate date];
-    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
-    NSDate *create = [fmt dateFromString:topic.create_time];
     
 //    NSCalendar *calendar = [NSCalendar currentCalendar];
     
@@ -54,11 +52,11 @@
 //    NSDateComponents *cmts = [calendar components:NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear fromDate:now];
     
 //    NSCalendarUnit unit = NSCalendarUnitDay|NSCalendarUnitMonth|NSCalendarUnitYear|NSCalendarUnitHour|NSCalendarUnitMinute|NSCalendarUnitSecond;
-    NSDateComponents *comp = [now deltaFrom:create];
+//    NSDateComponents *comp = [now deltaFrom:create];
     
     
 //    ZYCLog(@"%zd %zd %zd %zd %zd %zd ",comp.year,comp.month,comp.day,comp.hour,comp.minute,comp.second);
-    ZYCLog(@"%@",comp);
+//    ZYCLog(@"%@",comp);
     
     [self setButtonTitle:_dingButton count:topic.ding placeholder:@"顶"];
     [self setButtonTitle:_caiButton count:topic.cai placeholder:@"踩"];
