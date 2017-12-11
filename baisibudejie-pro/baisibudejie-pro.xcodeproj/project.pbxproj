@@ -243,9 +243,9 @@
 				128D04BA1F94E8D2005BECAE /* ZYCRecommendTagsCell.xib */,
 				12D44BA21FD4330000482FFC /* ZYCTopicCell.h */,
 				12D44BA31FD4330000482FFC /* ZYCTopicCell.m */,
+				12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */,
 				1258EB131FD82746000A2631 /* NSDate+ZYCExtention.h */,
 				1258EB141FD82746000A2631 /* NSDate+ZYCExtention.m */,
-				12D44BA41FD4330000482FFC /* ZYCTopicCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

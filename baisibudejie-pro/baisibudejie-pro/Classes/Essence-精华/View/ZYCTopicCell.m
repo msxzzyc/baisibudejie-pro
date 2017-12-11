@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
+@property (weak, nonatomic) IBOutlet UIImageView *sinaVView;
 
 @end
 @implementation ZYCTopicCell
@@ -36,7 +37,8 @@
     _topic = topic;
     [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image]placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
     self.nameLabel.text = topic.name;
-    
+//    topic.sina_v = (int)arc4random_uniform(100)%2;
+    self.sinaVView.hidden = !topic.isSina_v;
     
 //    ZYCLog(@"%@",topic.create_time);
     

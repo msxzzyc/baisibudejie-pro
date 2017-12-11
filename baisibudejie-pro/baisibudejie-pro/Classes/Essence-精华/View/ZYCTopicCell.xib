@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OKP-3j-9J6" userLabel="头像">
-                        <rect key="frame" x="18" y="18" width="50" height="50"/>
+                        <rect key="frame" x="3" y="3" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="6vj-qH-Pvb"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="kle-NP-fM3"/>
@@ -29,19 +29,19 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FmT-wu-RQj" userLabel="昵称">
-                        <rect key="frame" x="78" y="18" width="37.5" height="18"/>
+                        <rect key="frame" x="63" y="3" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ell-bU-xhA" userLabel="时间">
-                        <rect key="frame" x="78" y="53.5" width="31" height="14.5"/>
+                        <rect key="frame" x="63" y="38.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Da-3w-D2N" userLabel="关注按钮">
-                        <rect key="frame" x="479" y="18" width="19" height="20"/>
+                        <rect key="frame" x="479" y="3" width="19" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="0bG-jE-l07"/>
                             <constraint firstAttribute="width" constant="19" id="Ye6-GG-9DP"/>
@@ -143,10 +143,18 @@
                             <constraint firstItem="0f0-M0-Nmo" firstAttribute="leading" secondItem="DKA-fh-hCG" secondAttribute="trailing" id="z0G-YN-kGp"/>
                         </constraints>
                     </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_AddV_authen" translatesAutoresizingMaskIntoConstraints="NO" id="wsG-tx-dxC">
+                        <rect key="frame" x="39" y="39" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="14" id="UCn-7Q-CrA"/>
+                            <constraint firstAttribute="height" constant="14" id="zP9-CU-zK1"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="wsG-tx-dxC" firstAttribute="trailing" secondItem="OKP-3j-9J6" secondAttribute="trailing" id="B5M-o2-29q"/>
                     <constraint firstAttribute="bottom" secondItem="Yuc-kq-T16" secondAttribute="bottom" id="Idn-Ze-2EE"/>
-                    <constraint firstItem="OKP-3j-9J6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="K1m-Bn-e8z"/>
+                    <constraint firstItem="OKP-3j-9J6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-5" id="K1m-Bn-e8z"/>
                     <constraint firstAttribute="trailingMargin" secondItem="8Da-3w-D2N" secondAttribute="trailing" constant="10" id="Lcd-ZX-SEg"/>
                     <constraint firstItem="Yuc-kq-T16" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ms1-EY-hLY"/>
                     <constraint firstItem="FmT-wu-RQj" firstAttribute="top" secondItem="OKP-3j-9J6" secondAttribute="top" id="QSx-qy-6YI"/>
@@ -154,7 +162,8 @@
                     <constraint firstItem="Ell-bU-xhA" firstAttribute="leading" secondItem="FmT-wu-RQj" secondAttribute="leading" id="YOU-QR-DRX"/>
                     <constraint firstItem="FmT-wu-RQj" firstAttribute="leading" secondItem="OKP-3j-9J6" secondAttribute="trailing" constant="10" id="YzE-AZ-GEM"/>
                     <constraint firstItem="Ell-bU-xhA" firstAttribute="bottom" secondItem="OKP-3j-9J6" secondAttribute="bottom" id="cCZ-3M-9Yo"/>
-                    <constraint firstItem="OKP-3j-9J6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="pCa-Ws-7Kj"/>
+                    <constraint firstItem="wsG-tx-dxC" firstAttribute="bottom" secondItem="OKP-3j-9J6" secondAttribute="bottom" id="mqh-Pp-cQe"/>
+                    <constraint firstItem="OKP-3j-9J6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="pCa-Ws-7Kj"/>
                     <constraint firstAttribute="trailing" secondItem="Yuc-kq-T16" secondAttribute="trailing" id="vMd-h0-KkL"/>
                 </constraints>
             </tableViewCellContentView>
@@ -167,11 +176,13 @@
                 <outlet property="nameLabel" destination="FmT-wu-RQj" id="Wd0-NK-LP4"/>
                 <outlet property="profileImageView" destination="OKP-3j-9J6" id="99g-z0-Vmk"/>
                 <outlet property="shareButton" destination="bl4-aq-ZuG" id="drJ-77-esJ"/>
+                <outlet property="sinaVView" destination="wsG-tx-dxC" id="gKO-5g-hFQ"/>
             </connections>
-            <point key="canvasLocation" x="18" y="174"/>
+            <point key="canvasLocation" x="18" y="173.5"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Profile_AddV_authen" width="14" height="14"/>
         <image name="cell-button-line" width="1" height="29"/>
         <image name="cell-content-line" width="299" height="1"/>
         <image name="cellFollowClickIcon" width="19" height="20"/>
