@@ -1,26 +1,28 @@
 //
-//  ZYCWordViewController.m
+//  ZYCTopicViewController.m
 //  baisibudejie-pro
 //
-//  Created by wpzyc on 2017/10/31.
+//  Created by wpzyc on 2017/12/13.
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
 
-#import "ZYCWordViewController.h"
+
+
+#import "ZYCTopicViewController.h"
 #import <AFNetworking.h>
 #import <UIImageView+WebCache.h>
 #import "ZYCTopic.h"
 #import "ZYCTopicCell.h"
 #import <MJExtension.h>
 #import <MJRefresh.h>
-@interface ZYCWordViewController ()
+@interface ZYCTopicViewController ()
 @property(nonatomic,strong)NSMutableArray *topics;
 @property(nonatomic,assign)NSInteger page;
 @property(nonatomic,strong)NSString *maxtime;
 @property(nonatomic,strong)NSDictionary *params;
 @end
 
-@implementation ZYCWordViewController
+@implementation ZYCTopicViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpTableView];
@@ -60,7 +62,7 @@ static NSString *const ZYCTopicCellId = @"topic";
     
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreTopic)];
     
-//    self.tableView.mj_footer.hidden = YES;
+    //    self.tableView.mj_footer.hidden = YES;
 }
 - (void)loadNewTopic
 {
@@ -68,7 +70,7 @@ static NSString *const ZYCTopicCellId = @"topic";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     self.params = params;
     [[AFHTTPSessionManager manager] GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.params !=params) return ;
@@ -97,11 +99,11 @@ static NSString *const ZYCTopicCellId = @"topic";
 - (void)loadMoreTopic
 {
     [self.tableView.mj_header endRefreshing];
-//    self.page++;
+    //    self.page++;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"data";
-    params[@"type"] = @"29";
+    params[@"type"] = @(self.type);
     NSInteger page = self.page + 1;
     params[@"page"] = @(page);
     params[@"maxtime"] = self.maxtime;
@@ -123,7 +125,7 @@ static NSString *const ZYCTopicCellId = @"topic";
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         ZYCLog(@"%@",error);
         if (self.params !=params) return ;
-//        self.page--;
+        //        self.page--;
         [self.tableView.mj_footer endRefreshing];
         
         
@@ -145,11 +147,11 @@ static NSString *const ZYCTopicCellId = @"topic";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-
+    
     ZYCTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:ZYCTopicCellId];
     
     cell.topic = self.topics[indexPath.row];
-
+    
     return cell;
 }
 #pragma mark - Table view delegate
@@ -160,47 +162,50 @@ static NSString *const ZYCTopicCellId = @"topic";
 }
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end
+
