@@ -10,3 +10,6 @@
 
 CGFloat const ZYCTitlesViewH = 35;
 CGFloat const ZYCTitlesViewY = 64;
+CGFloat const ZYCTopicCellMargin = 10;
+CGFloat const ZYCTopicCellTextY = 55;
+CGFloat const ZYCTopicCellBottomBarH = 44;

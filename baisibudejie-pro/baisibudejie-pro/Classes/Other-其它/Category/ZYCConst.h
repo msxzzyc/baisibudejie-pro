@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 UIKIT_EXTERN CGFloat const ZYCTitlesViewH ;
 UIKIT_EXTERN CGFloat const ZYCTitlesViewY ;
-
+UIKIT_EXTERN CGFloat const ZYCTopicCellMargin;
+UIKIT_EXTERN CGFloat const ZYCTopicCellTextY;
+UIKIT_EXTERN CGFloat const ZYCTopicCellBottomBarH;

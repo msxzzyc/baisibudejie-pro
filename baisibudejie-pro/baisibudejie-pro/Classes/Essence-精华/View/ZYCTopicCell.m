@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 @property (weak, nonatomic) IBOutlet UIImageView *sinaVView;
+@property (weak, nonatomic) IBOutlet UILabel *text_Label;
 
 @end
 @implementation ZYCTopicCell
@@ -44,6 +45,7 @@
     
     self.createTimeLabel.text = topic.create_time;
     
+    self.text_Label.text = topic.text;
     
     
     
@@ -92,11 +94,11 @@
 }
 - (void)setFrame:(CGRect)frame
 {
-    static CGFloat margin = 10;
-    frame.origin.x = margin;
-    frame.size.width -= 2*margin;
-    frame.size.height -= margin;
-    frame.origin.y += margin;
+    
+    frame.origin.x = ZYCTopicCellMargin;
+    frame.size.width -= 2*ZYCTopicCellMargin;
+    frame.size.height -= ZYCTopicCellMargin;
+    frame.origin.y += ZYCTopicCellMargin;
     
     [super setFrame:frame];
 }
