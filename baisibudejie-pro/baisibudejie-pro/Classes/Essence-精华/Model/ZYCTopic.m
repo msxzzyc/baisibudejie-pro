@@ -9,6 +9,9 @@
 #import "ZYCTopic.h"
 
 @implementation ZYCTopic
+{
+   CGFloat _cellHeight;
+}
 - (NSString *)create_time
 {
     NSDate *now = [NSDate date];
@@ -35,7 +38,16 @@
     } else {
         return  _create_time;
     }
+}
+- (CGFloat)cellHeight
+{
+    if (!_cellHeight) {
+        CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 40, MAXFLOAT);
+        //    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
+        CGFloat textH = [_text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+        _cellHeight = ZYCTopicCellTextY + textH +ZYCTopicCellBottomBarH +2*ZYCTopicCellMargin;
+    }
     
-    
+    return _cellHeight;
 }
 @end

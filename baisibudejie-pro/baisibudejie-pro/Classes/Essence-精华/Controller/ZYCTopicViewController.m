@@ -158,11 +158,8 @@ static NSString *const ZYCTopicCellId = @"topic";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ZYCTopic *topic = self.topics[indexPath.row];
-    CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 40, MAXFLOAT);
-//    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
-    CGFloat textH = [topic.text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
-    CGFloat cellHeight = ZYCTopicCellTextY + textH +ZYCTopicCellBottomBarH +2*ZYCTopicCellMargin;
-    return cellHeight;
+    
+    return topic.cellHeight;
     
 }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 wpzyc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface ZYCTopic : NSObject
 
@@ -20,4 +20,5 @@
 @property(nonatomic,assign)NSInteger repost;
 @property(nonatomic,assign)NSInteger comment;
 @property(nonatomic,assign,getter=isSina_v)BOOL sina_v;
+@property(nonatomic,assign,readonly)CGFloat cellHeight;
 @end
