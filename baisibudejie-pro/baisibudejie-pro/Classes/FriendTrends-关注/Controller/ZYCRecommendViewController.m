@@ -91,7 +91,7 @@ static NSString *const ZYCUserId = @"user";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(c.id);
+    params[@"category_id"] = @(c.ID);
     params[@"page"] = @(++c.currentPage);
     self.params = params;
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -121,7 +121,7 @@ static NSString *const ZYCUserId = @"user";
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"a"] = @"list";
     params[@"c"] = @"subscribe";
-    params[@"category_id"] = @(rc.id);
+    params[@"category_id"] = @(rc.ID);
     params[@"page"] = @(rc.currentPage);
     self.params = params;
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

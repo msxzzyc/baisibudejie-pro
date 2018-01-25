@@ -7,8 +7,21 @@
 //
 
 #import "ZYCRecommendCategory.h"
-
+#import <MJExtension.h>
 @implementation ZYCRecommendCategory
+
+//+ (NSDictionary *)mj_replacedKeyFromPropertyName
+//{
+//    return @{
+//             @"ID":@"id"
+//             };
+//}
++ (id)mj_replacedKeyFromPropertyName121:(NSString *)propertyName
+{
+    if ([propertyName isEqualToString:@"ID"]) return @"id";
+        return propertyName;
+    
+}
 - (NSMutableArray *)users
 {
     if (!_users) {
