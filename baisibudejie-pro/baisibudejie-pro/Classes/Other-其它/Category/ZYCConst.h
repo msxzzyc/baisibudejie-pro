@@ -21,3 +21,5 @@ UIKIT_EXTERN CGFloat const ZYCTitlesViewY ;
 UIKIT_EXTERN CGFloat const ZYCTopicCellMargin;
 UIKIT_EXTERN CGFloat const ZYCTopicCellTextY;
 UIKIT_EXTERN CGFloat const ZYCTopicCellBottomBarH;
+UIKIT_EXTERN CGFloat const ZYCTopicCellPictureMaxH;
+UIKIT_EXTERN CGFloat const ZYCTopicCellPictureBreakH;

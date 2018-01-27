@@ -24,6 +24,7 @@
 }
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
 }
 - (void)setTopic:(ZYCTopic *)topic
@@ -31,6 +32,18 @@
     _topic = topic;
     
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image]];
+    
+    NSString *extension = topic.large_image.pathExtension;
+    self.gifView.hidden = ![extension.lowercaseString isEqualToString:@"gif"];
+    
+    if (topic.BigPicture) {
+        self.seeBigImage.hidden = NO;
+        self.imageView.contentMode = UIViewContentModeTop;
+    } else {
+        self.seeBigImage.hidden = YES;
+        self.imageView.contentMode = UIViewContentModeScaleToFill;
+    }
+    
 }
 /*
 // Only override drawRect: if you perform custom drawing.

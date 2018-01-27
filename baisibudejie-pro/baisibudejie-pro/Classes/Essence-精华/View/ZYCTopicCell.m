@@ -60,7 +60,7 @@
     
     if (topic.type == ZYCTopicTypePicture) {
         self.pictureView.topic = topic;
-        self.pictureView.frame = topic.pictureViewFrame;
+        self.pictureView.frame = topic.pictureFrame;
     }
     
     

@@ -35,10 +35,14 @@
         if (self.type == ZYCTopicTypePicture) {
             CGFloat pictureW = maxSize.width;
             CGFloat pictureH = pictureW *self.height/self.width;
+            if (pictureH >= 1000) {
+                pictureH = ZYCTopicCellPictureBreakH;
+                self.BigPicture = YES;
+            }
             
             CGFloat pictureX = ZYCTopicCellMargin;
             CGFloat pictureY = ZYCTopicCellTextY + textH + ZYCTopicCellMargin;
-            _pictureViewFrame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
+            _pictureFrame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
             
             _cellHeight += pictureH + ZYCTopicCellMargin;
         }
