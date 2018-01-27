@@ -9,6 +9,7 @@
 #import "ZYCTopicCell.h"
 #import "ZYCTopic.h"
 #import <UIImageView+WebCache.h>
+#import "ZYCTopicPictureView.h"
 @interface ZYCTopicCell()
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -21,9 +22,19 @@
 @property (weak, nonatomic) IBOutlet UIImageView *sinaVView;
 @property (weak, nonatomic) IBOutlet UILabel *text_Label;
 
+@property (weak, nonatomic) ZYCTopicPictureView *pictureView;
 @end
 @implementation ZYCTopicCell
 
+- (ZYCTopicPictureView *)pictureView
+{
+    if (!_pictureView) {
+        ZYCTopicPictureView *pictureView = [ZYCTopicPictureView pictureView];
+        [self.contentView addSubview:pictureView];
+        _pictureView = pictureView;
+    }
+    return _pictureView ;
+}
 - (void)awakeFromNib {
     [super awakeFromNib];
     UIImageView *bgView = [[UIImageView alloc]init];
@@ -46,6 +57,11 @@
     self.createTimeLabel.text = topic.create_time;
     
     self.text_Label.text = topic.text;
+    
+    if (topic.type == ZYCTopicTypePicture) {
+        self.pictureView.topic = topic;
+        self.pictureView.frame = topic.pictureViewFrame;
+    }
     
     
     

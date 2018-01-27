@@ -20,7 +20,9 @@
 @property(nonatomic,assign)NSInteger repost;
 @property(nonatomic,assign)NSInteger comment;
 @property(nonatomic,assign,getter=isSina_v)BOOL sina_v;
+
 @property(nonatomic,assign,readonly)CGFloat cellHeight;
+@property(nonatomic,assign,readonly)CGRect pictureViewFrame;
 
 @property(nonatomic,assign)CGFloat width;
 @property(nonatomic,assign)CGFloat height;
@@ -29,4 +31,5 @@
 @property(nonatomic,copy)NSString *middle_image;
 @property(nonatomic,copy)NSString *large_image;
 
+@property(nonatomic,assign)ZYCTopicType type;
 @end

@@ -11,6 +11,8 @@
 
 {
    CGFloat _cellHeight;
+    CGRect _pictureViewFrame;
+
 }
 + (NSDictionary *)mj_replacedKeyFromPropertyName
 {
@@ -25,11 +27,22 @@
 - (CGFloat)cellHeight
 {
     if (!_cellHeight) {
-        ZYCLog(@"%@---\n%@----\n%@",self.small_image,self.middle_image,self.large_image);
+        
         CGSize maxSize = CGSizeMake([UIScreen mainScreen].bounds.size.width - 40, MAXFLOAT);
         //    CGFloat textH = [topic.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:maxSize].height;
         CGFloat textH = [_text boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
-        _cellHeight = ZYCTopicCellTextY + textH +ZYCTopicCellBottomBarH +2*ZYCTopicCellMargin + self.height;
+        _cellHeight = ZYCTopicCellTextY + textH +ZYCTopicCellMargin;
+        if (self.type == ZYCTopicTypePicture) {
+            CGFloat pictureW = maxSize.width;
+            CGFloat pictureH = pictureW *self.height/self.width;
+            
+            CGFloat pictureX = ZYCTopicCellMargin;
+            CGFloat pictureY = ZYCTopicCellTextY + textH + ZYCTopicCellMargin;
+            _pictureViewFrame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
+            
+            _cellHeight += pictureH + ZYCTopicCellMargin;
+        }
+        _cellHeight += ZYCTopicCellBottomBarH + ZYCTopicCellMargin;
     }
     
     return _cellHeight;

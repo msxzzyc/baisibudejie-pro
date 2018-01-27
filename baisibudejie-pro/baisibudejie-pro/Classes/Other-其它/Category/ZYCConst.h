@@ -7,6 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef enum{
+    ZYCTopicTypeAll = 1,
+    ZYCTopicTypePicture = 10,
+    ZYCTopicTypeWord = 29,
+    ZYCTopicTypeVoice = 31,
+    ZYCTopicTypeVideo = 41
+    
+}ZYCTopicType;
+
 UIKIT_EXTERN CGFloat const ZYCTitlesViewH ;
 UIKIT_EXTERN CGFloat const ZYCTitlesViewY ;
 UIKIT_EXTERN CGFloat const ZYCTopicCellMargin;
