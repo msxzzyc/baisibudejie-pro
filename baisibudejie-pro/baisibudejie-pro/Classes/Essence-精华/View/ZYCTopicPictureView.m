@@ -9,10 +9,13 @@
 #import "ZYCTopicPictureView.h"
 #import "ZYCTopic.h"
 #import <UIImageView+WebCache.h>
+#import <DALabeledCircularProgressView.h>
 @interface ZYCTopicPictureView()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIImageView *gifView;
 @property (weak, nonatomic) IBOutlet UIButton *seeBigImage;
+@property (weak, nonatomic) IBOutlet DALabeledCircularProgressView *progressView;
+
 
 
 @end
@@ -26,13 +29,22 @@
 {
     [super awakeFromNib];
     self.autoresizingMask = UIViewAutoresizingNone;
+    self.progressView.roundedCorners = 2;
+    self.progressView.progressLabel.textColor = [UIColor whiteColor];
 }
 - (void)setTopic:(ZYCTopic *)topic
 {
     _topic = topic;
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:topic.large_image]];
-    
+    [self.imageView sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:topic.large_image] placeholderImage:nil options:nil progress:^(NSInteger receivedSize, NSInteger expectedSize, NSURL * _Nullable targetURL) {
+        self.progressView.hidden = NO;
+        
+        CGFloat progress = 1.0*receivedSize/expectedSize;
+        [self.progressView setProgress:progress animated:YES];
+        self.progressView.progressLabel.text = [NSString stringWithFormat:@"%.0f%%",progress*100];
+    } completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+        self.progressView.hidden = YES;
+    }];
     NSString *extension = topic.large_image.pathExtension;
     self.gifView.hidden = ![extension.lowercaseString isEqualToString:@"gif"];
     

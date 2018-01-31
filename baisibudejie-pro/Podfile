@@ -12,6 +12,8 @@ pod “pop”
 pod “NJKWebViewProgress”
 pod “MJExtension”
 pod “MJRefresh”
+pod “DACircularProgress”
+
   # Pods for baisibudejie-pro
 
 
@@ -27,6 +29,7 @@ pod “pop”
 pod “NJKWebViewProgress”
 pod “MJExtension”
 pod “MJRefresh”
+pod “DACircularProgress”
   end
 
 end
